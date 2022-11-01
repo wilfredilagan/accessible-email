@@ -1,0 +1,113 @@
+<extends src="main.html">
+    <block name="template">
+                <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+                <!-- Preview Text Spacing Hack : BEGIN -->
+                <!--<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+                    &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+                </div> -->
+                <!-- Preview Text Spacing Hack : END -->
+        
+                <!--
+                    Set the email width. Defined in two places:
+                    1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+                    2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+                    Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+                -->
+                <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+                    <!--[if mso]>
+                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+                    <tr>
+                    <td>
+                    <![endif]-->
+        
+                    <!-- Email Body : BEGIN -->
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+                            <tr>
+                                <td style="text-align: right;">
+                                    <p class="m-0"><a href="https://trten.sharepoint.com/sites/AccessibilityNewsletter/" class="font-main text-xs underline" style="text-decoration: underline">View newsletter in webpage</a></p>
+                                    <p class="m-0"><a class="font-main text-xs underline" href="https://trten.sharepoint.com/:t:/r/sites/AccessibilityNewsletter/Shared%20Documents/images/a11ymatters-q4.txt" style="text-decoration: underline">View plain text version of newsletter</a></p>
+                                </td>
+                            </tr>
+                            <component src="hero.html"></component>
+                            <component src="header.html"></component>
+                            <component src="h2.html" text="Features"></component>
+                            <component src="feature.html" 
+                                image="../images/Annotationskit.jpg" 
+                                heading="The Thomson Reuters Accessibility Annotations Kit">
+                                <component src="p.html" text="Accessibility annotations are a hands-on, efficient, and scalable way for designers to communicate needs to engineers.  ​The accessibility team has created an accessibility annotations kit for Figma to do this.  Within the kit you can find annotations for alt text, headings, alerts, notes, landmarks and reading order and tab order."></component>
+                                <component src="p.html" text="Accessibility annotations should be done in Figma after designs are at a point where they are ready for being annotated (Final designs or close to final designs).  Accessibility annotations should follow the general template given by the accessibility team."></component>
+                                <component src="p.html"><a href="https://www.figma.com/file/OACUNHKfUHsXQ58MqqRuz4/TR-A11y-Annotation-Kit?node-id=1269%3A2053" style="text-decoration:underline">Documentation and Figma file of kit</a></component>
+                            </component>
+                            <component src="feature.html"
+                                heading="The Americans with Disabilities Act (ADA) turns 32!">
+                                <component src="p.html" text="July 26 was National Disability Independence day and it was also the same day that the American with Disabilities Act (ADA) turned 32.  This historic civil rights law protects the rights of people with disabilities."></component>
+                                <component src="p.html" text="The ADA is a civil rights law that prohibits discrimination against individuals with disabilities in all areas of public life, including jobs, schools, transportation, and all public and private places that are open to the general public. The purpose of the law is to make sure that people with disabilities have the same rights and opportunities as everyone else."></component>
+                                <component src="p.html" text="For more information view the"><a href="https://adaanniversary.org/" style="text-decoration:underline">ADA Anniversary Toolkit</a></component>
+                            </component>
+                        <component src="h2.html" text="News"></component>
+                        <component src="two-column.html" 
+                            image1="../images/W3C.jpg"
+                            alt1="W3C logo"
+                            heading1="WCAG 2.2 candidate recommendation"
+                            link1="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/"
+                            text1="On Tuesday August 30, 2022, the WCAG working group agreed to move forward with the WCAG 2.2 candidate recommendation.  WCAG is the Web content accessibility guidelines and are the standard which we follow here at Thomson Reuters.  It is also the basis of many laws around the world.  Members on the Thomson Reuters accessibility team also participate in the accessibility guidelines working group that helps decides on the guidelines themselves.  "
+                            image2="../images/figmalogo.png"
+                            heading2="Accessible prototypes in Figma"
+                            link2="https://help.figma.com/hc/en-us/articles/7810391964695"
+                            alt2="Figma Logo"
+                            text2="Figma announce a prototype screen reader beta that includes support for text notes, alt text for images, and the ability to interact with and navigate through prototypes with buttons and keyboard actions like tabbing."
+                            >
+                        </component>
+                        <component src="two-column.html"
+                            image1="../images/getsitelogo.jpg"
+                            alt1="2022 TR Global Technology Unconference Logo"
+                            heading1="TR accessibility team presenting at 2022 TR Global Technology Unconference"
+                            link1="https://trten.sharepoint.com/sites/intr-global-technology-unconference"
+                            text1="September 14-16 is the TR Global Technology Unconference.  The accessibility team has four presentations at the conference.  On September 14th at 11:00am CDT, Rachel Braaten will be presenting an overview of the TR accessiiblity program overview.  At 1:00pm CDT that same day, Wil Ilagan and Philip Springall will be presenting Designing for Accessibility and Inclusion: The accessibility team's role in design pods.  On September 15 at 11:00am CDT, Gavin Ogston and Kate Zhao will be presenting Developming for accessibility - you're not alone and on the same day at 1:00pm CDT, Philip Springall and Caryn Pagel will be presenting Secrets of Accessibility Experts REVEALED!.  Join us on September 14 and 15 at the TR Global Technology Unconference"
+                            image2="../images/accessibilitytesting.jpeg"
+                            alt2="Computer with assistive device symbols on screen"
+                            heading2="TR Accessibility testing team assignments"
+                            link2="https://trten.sharepoint.com/:x:/r/sites/TRDesign/Shared%20Documents/General/A11y%20and%20UX%20Design%20Org%20Structure.xlsx?d=w76643854c8e041ec9c39e69e0007fb56&csf=1&web=1&e=A3kF7I"
+                            text2="At Thomson Reuters we have a dedicated team for accessibility testing.  We also now have dedicated accessibility testers for each design pod.  This will allow the accessibility testing be more streamlined with the dedicated accessibility tester.  Along with the dedicated testers there are is an new accessibility testing process that the accessibility team has created.  This will involve using some of the tooling, Level Access AMP, that will provide an easier way to understand the accessibility bugs that arise"
+                        ></component>
+                        <!--<component 
+                            src="thumbleft-textright.html"
+                            image="../images/a11ycasts.jpeg"
+                            alt="A computer with a11ycasts on the screen"
+                            heading="TR Accessibility Podcast"
+                            text="We have an official podcast where we will be discussing the ongoings of our accessibility team, news from the accessibility industry and updates to best practices and processes"></component> -->
+                        <component src="h2.html" text="Links"></component>
+                        <component src="list.html">
+                            <component src="listitem-link.html" link="https://www.theverge.com/23203911/screen-readers-history-blind-henter-curran-teh-nvda" linktext="The Hidden History of Screen Readers (The Verge)"></component>
+                            <component src="listitem-link.html" link="https://aeon.co/essays/what-does-it-mean-to-consider-yourself-a-disabled-person" linktext="Am I disabled? (Aeon)"></component>
+                            <component src="listitem-link.html" link="https://www.lflegal.com/2022/07/ada-32/" linktext="#ADA32: The ADA has applied to digital for decades (Lainey Feingold)"></component>
+                            <component src="listitem-link.html" link="https://equalentry.com/accessibility-tactical-communication/" linktext="Speaking up and speaking out: Tactical communication in accessibility (Equal Entry)"></component>
+                            <component src="listitem-link.html" link="https://makeitfable.com/glossary/" linktext="Assistive technology glossary (Fable)"></component>
+                            <component src="listitem-link.html" link="https://www.a11yproject.com/posts/large-touch-targets/" linktext="Quick test: Large touch targets (The A11y Project)"></component>
+                            <component src="listitem-link.html" link="https://tetralogical.com/blog/2022/08/01/inclusive-user-research-recruiting-participants/" linktext="Inclusive user research: recruiting participants (Tetralogical)"></component>
+                        </component>
+                        <component src="h2.html" text="Events"></component>
+                        <component src="list.html">
+                            <component src="listitem-link.html" link="https://conference.webaim.org/" linktext="Web Accessibility in Mind - September 7 + 8 (In person & virtual)"></component>
+                            <component src="listitem-link.html" link="https://conf.a11yto.com/" linktext="a11yTO Conf - September 18 & 19 (In person & virtual)"></component>
+                        </component>
+                        <component src="h2.html" text="Resources"></component>
+                        <component src="resources.html"></component>
+                        <component src="footer.html"></component>
+                    </table>
+                    <!-- Email Body : END -->
+        
+        
+                    <!--[if mso]>
+                    </td>
+                    </tr>
+                    </table>
+                    <![endif]-->
+                </div>      
+            <!--[if mso | IE]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+    </block>
+</extends>
