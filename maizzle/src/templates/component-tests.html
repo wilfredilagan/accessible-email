@@ -1,7 +1,14 @@
 <extends src="main.html">
     <block name="template">
         <fetch url="http://localhost:1337/api/component-tests"></fetch>
-        <p>{{ response.data[0].attributes.type }}</p>
-        <component src="{{ response.data[0].attributes.type }}.html"
+        <each loop="data in response.data">
+        <p>{{ data.attributes.type }}</p>
+        <if condition="data.attributes.text !== null">
+            <component src="{{ data.attributes.type }}.html" text="{{ data.attributes.text}}"></component>
+        </if>
+        <else>
+            <component src="{{ data.attributes.type }}.html" ></component>
+        </else>
+        </each>
     </block>
 </extends>

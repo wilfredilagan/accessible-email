@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_component_types_two_columns",
+  "info": {
+    "displayName": "Two Column",
+    "icon": "at"
+  },
+  "options": {},
+  "attributes": {
+    "image1": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "alt_text1": {
+      "type": "string"
+    },
+    "heading1": {
+      "type": "string"
+    },
+    "link1": {
+      "type": "string"
+    },
+    "text1": {
+      "type": "string"
+    },
+    "image2": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "alt_text2": {
+      "type": "string"
+    },
+    "heading2": {
+      "type": "string"
+    },
+    "link2": {
+      "type": "string"
+    },
+    "text2": {
+      "type": "string"
+    }
+  }
+}

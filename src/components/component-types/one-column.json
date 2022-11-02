@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_component_types_one_columns",
+  "info": {
+    "displayName": "One Column",
+    "icon": "arrow-circle-down"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

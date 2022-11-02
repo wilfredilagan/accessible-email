@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_component_types_heroes",
+  "info": {
+    "displayName": "hero",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

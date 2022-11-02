@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_component_types_h2s",
+  "info": {
+    "displayName": "h2",
+    "icon": "apple-alt"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}
