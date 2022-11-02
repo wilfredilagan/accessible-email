@@ -5,7 +5,8 @@
     "build": "strapi build",
     "develop": "strapi develop",
     "start": "strapi start",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "dev-all": "strapi develop & maizzle serve"
   },
   "dependencies": {
     "@maizzle/framework": "latest",

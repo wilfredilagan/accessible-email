@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "component_tests",
+  "info": {
+    "singularName": "component-test",
+    "pluralName": "component-tests",
+    "displayName": "Component test"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

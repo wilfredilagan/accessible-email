@@ -1,0 +1,7 @@
+<extends src="main.html">
+    <block name="template">
+        <fetch url="http://localhost:1337/api/component-tests"></fetch>
+        <p>{{ response.data[0].attributes.type }}</p>
+        <component src="{{ response.data[0].attributes.type }}.html"
+    </block>
+</extends>
