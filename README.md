@@ -1,16 +1,16 @@
-#Accessible Email Generator
+# Accessible Email Generator
 
-##Develop
+## Develop
 ```
 npm run dev-all
 ```
 
-##Run Maizzle only
+## Run Maizzle only
 ```
 npm run dev
 ```
 
-##Run Strapi only
+## Run Strapi only
 ```
 npm run develop
 ```
