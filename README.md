@@ -1,5 +1,7 @@
 # Accessible Email Generator
 
+Create newsletter emails using Strapi as a authoring tool and Maizzle as the backend creation of the email
+
 ## Develop
 ```
 npm run dev-all
