@@ -8,8 +8,17 @@
       <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
       <meta name="color-scheme" content="light">
       <meta name="supported-color-schemes" content="light">
-      <title>Accessibility Matters: Q4 Edition</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+      <title>Hospitable Hilton: Issue #2 - April/May Edition</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
   
+      <!--[if (gte mso 9)|(IE)]>
+        <style type="text/css">
+        table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        mso-table-lspace: 0pt !important;
+        mso-table-rspace: 0pt !important; }
+        </style>
+     <![endif]-->
       <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
       <!--[if gte mso 9]>
       <xml>
@@ -159,7 +168,7 @@
   
         /* Media Queries */
         @media screen and (max-width: 480px) {
-  
+
             /* What it does: Forces table cells into full-width rows. */
             .stack-column,
             .stack-column-center {
@@ -189,6 +198,10 @@
             .email-container p {
                 font-size: 17px !important;
             }
+
+            .listitem-link {
+                padding-bottom: 8px;
+            }
             
         }</style>
         <!--[if (gte mso 9)|(IE)]>
@@ -200,7 +213,14 @@
         <![endif]-->
       <!-- Progressive Enhancements : END -->
       
-        <style>.collapse {
+        <style>/* Tailwind CSS components */
+/**
+ * @import here any custom CSS components - that is, CSS that
+ * you'd want loaded before the Tailwind utilities, so the
+ * utilities can still override them.
+*/
+/* Tailwind CSS utility classes */
+.collapse {
     visibility: collapse !important
 }
 .fixed {
@@ -215,16 +235,20 @@
 .m-0 {
     margin: 0 !important
 }
-.my-0 {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important
-}
-.mx-5 {
-    margin-left: 20px !important;
-    margin-right: 20px !important
-}
 .mb-0 {
     margin-bottom: 0 !important
+}
+.ml-3 {
+    margin-left: 12px !important
+}
+.mr-3 {
+    margin-right: 12px !important
+}
+.mt-2 {
+    margin-top: 8px !important
+}
+.mb-2 {
+    margin-bottom: 8px !important
 }
 .block {
     display: block !important
@@ -244,8 +268,17 @@
 .hidden {
     display: none !important
 }
+.max-h-2-column {
+    max-height: 310px !important
+}
 .w-full {
     width: 100% !important
+}
+.w-3-4 {
+    width: 75% !important
+}
+.max-w-2-column {
+    max-width: 310px !important
 }
 .border-collapse {
     border-collapse: collapse !important
@@ -262,58 +295,65 @@
 .border-t-2 {
     border-top-width: 2px !important
 }
+.border-l-0 {
+    border-left-width: 0px !important
+}
+.border-r-0 {
+    border-right-width: 0px !important
+}
+.border-b-0 {
+    border-bottom-width: 0px !important
+}
 .border-solid {
     border-style: solid !important
 }
-.border-b-white {
-    border-bottom-color: #fff !important
-}
-.border-l-white {
-    border-left-color: #fff !important
-}
-.border-r-white {
-    border-right-color: #fff !important
-}
 .bg-white {
-    background-color: #fff !important
+    background-color: #ffffff !important
 }
-.bg-clip-content {
-    background-clip: content-box !important
+.bg-dark-logo {
+    background-color: #232323 !important
 }
 .p-0 {
     padding: 0 !important
 }
-.px-5 {
-    padding-left: 20px !important;
-    padding-right: 20px !important
+.py-5 {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important
 }
-.py-2_5 {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important
+.py-3 {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important
 }
 .py-2 {
     padding-top: 8px !important;
     padding-bottom: 8px !important
 }
-.px-2_5 {
-    padding-left: 10px !important;
-    padding-right: 10px !important
+.px-5 {
+    padding-left: 20px !important;
+    padding-right: 20px !important
+}
+.py-1 {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important
 }
 .px-2 {
     padding-left: 8px !important;
     padding-right: 8px !important
 }
-.pb-5 {
-    padding-bottom: 20px !important
+.pl-1 {
+    padding-left: 4px !important
+}
+.pr-5 {
+    padding-right: 20px !important
+}
+.pb-3 {
+    padding-bottom: 12px !important
 }
 .pb-2 {
     padding-bottom: 8px !important
 }
-.pl-2_5 {
-    padding-left: 10px !important
-}
-.pr-2_5 {
-    padding-right: 10px !important
+.pb-4 {
+    padding-bottom: 16px !important
 }
 .pl-2 {
     padding-left: 8px !important
@@ -327,17 +367,32 @@
 .text-center {
     text-align: center !important
 }
-.text-sm {
-    font-size: 14px !important
+.font-main {
+    font-family: loews-bold, arial, sans-serif !important
 }
-.text-base {
+.font-subheading {
+    font-family: loews, arial, sans-serif !important
+}
+.text-sm {
     font-size: 16px !important
 }
-.text-xs {
-    font-size: 12px !important
+.text-3xl {
+    font-size: 30px !important
+}
+.text-2xl {
+    font-size: 24px !important
+}
+.font-medium {
+    font-weight: 500 !important
+}
+.font-thin {
+    font-weight: 100 !important
 }
 .font-bold {
     font-weight: 700 !important
+}
+.font-black {
+    font-weight: 900 !important
 }
 .leading-5 {
     line-height: 20px !important
@@ -345,11 +400,11 @@
 .tracking-normal {
     letter-spacing: 0em !important
 }
-.text-black {
-    color: #000 !important
-}
 .text-white {
-    color: #fff !important
+    color: #ffffff !important
+}
+.text-lightblue-logo {
+    color: #B1D7FF !important
 }
 .transition {
     transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter !important;
@@ -361,7 +416,17 @@
 }
 .-webkit-font-smoothing-antialiased {
     -webkit-font-smoothing: antialiased
-}</style>
+}
+/* Your custom utility classes */
+/*
+ * Here is where you can define your custom utility classes.
+ *
+ * We wrap them in the `utilities` @layer directive, so
+ * that Tailwind moves them to the correct location.
+ *
+ * More info:
+ * https://tailwindcss.com/docs/functions-and-directives#layer
+*/</style>
       
   </head>
 
@@ -381,7 +446,7 @@
                     2. MSO tags for Desktop Windows Outlook enforce a 680px width.
                     Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
                 -->
-                <div style="max-width: 680px; margin: 0 auto;" class="email-container">
+                <div style="max-width: 600px; margin: 0 auto;" class="email-container">
                     <!--[if mso]>
                     <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
                     <tr>
@@ -390,119 +455,100 @@
         
                     <!-- Email Body : BEGIN -->
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto">
-                            <tr>
-                                <td style="text-align: right">
-                                    <p class="m-0"><a href="https://trten.sharepoint.com/sites/AccessibilityNewsletter/" class="font-main text-xs" style="text-decoration: underline">View newsletter in webpage</a></p>
-                                    <p class="m-0"><a class="font-main text-xs" href="https://trten.sharepoint.com/:t:/r/sites/AccessibilityNewsletter/Shared%20Documents/images/a11ymatters-q4.txt" style="text-decoration: underline">View plain text version of newsletter</a></p>
-                                </td>
-                            </tr>
                             <!-- Hero Image, Flush : BEGIN -->
-<tr>
-    <td>
-        <img src="../images/a11y-news-v4-responsive-edit1.jpg" width="680" height="320" alt="TR Accessibility Matters Logo" border="0" style="max-width: 680px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block" class="g-img w-full">
-    </td>
-</tr>
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr class="pb-2">
+        <td>
+            </td></tr><tr class="bg-dark-logo">
+                <td class="text-center">
+                    <img src="../images/hospitable_hilton_logo_dark.png" width="75%" align="center" alt="‘Hospitable Hilton’ with the ‘able’ and ‘Hilton’ portions in blue to signify that everyone is capable." border="0" style="margin: auto; margin: auto; max-width: 80%; height: auto; background: #dddddd; font-family: sans-serif; font-size: 16px; line-height: 16px; color: #555555; display: block" class="g-img w-full">
+                </td>
+            </tr>
+            <tr class="bg-dark-logo">
+                <td class="px-5">
+                    <p class="ml-3 mr-3 mt-2 mb-2 font-subheading font-thin text-2xl text-white text-center">A11y is the <strong class="text-lightblue-logo font-bold">light</strong> and <strong class="text-lightblue-logo font-bold">warmth</strong> of hospitality for <strong class="text-lightblue-logo font-black text-2xl">everyone</strong>!</p>
+                </td>
+            </tr>
+        
+    
+</table>
 <!-- Hero Image, Flush : END -->
-                            <!-- Email Header : BEGIN -->
-<tr class="bg-white">
-    <td class="px-5 py-2_5">
-        <div class="bg-grey">
-            <h1 class="m-0 font-main text-white text-h1 text-left">Accessibility Matters: Q4 Edition</h1>
-        </div>
-    </td>
-</tr>
-<!-- Email Header : END -->
-                            <tr class="bg-white">
-    <td style="padding-bottom: 10px; padding-left: 20px; padding-right: 20px">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr class="bg-white">
+    <td class="pl-1 pr-5 py-3">
         <div>
-            <h2 class="m-0 font-main text-orange text-h1 text-left font-bold">Features</h2>
+            <h2 class="m-0 text-orange font-main text-h1">Hilton teams are ‘sock stars’ at CSUN 2024</h2>
         </div>
     </td>
-</tr>
+    </tr>
+</table>
                             <!-- 1 Column Text + Button : BEGIN -->
-<tr name="feature">
-    <td>
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-white">
-            
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr name="feature">
+        <td>
+                
+                    </td></tr><tr>
+                        <td class="font-main text-center">
+                            <div style="padding-bottom:8px">
+                                <img src="../images/csun-group.jpeg" alt="The Hilton team at CSUN 2024 with big smiles on" class="w-3-4" width="75%">
+                            </div>
+                        </td>
+                    </tr>
                 <tr>
-                    <td class="font-main px-5">
-                        <img src="../images/Annotationskit.jpg" class="w-full" width="640" alt="">
-                    </td>
-                </tr>
-            <tr>
-                <td class="px-5 py-2_5">
-                    <h2 class="m-0 text-orange font-main text-h1">Feature: The Thomson Reuters Accessibility Annotations Kit</h2>
-                </td>
-            </tr>
-            <tr>
-                <td class="text-black text-sm mb-0 font-main px-5 leading-5" style="padding-bottom: 10px">
+                    <td class="text-black text-sm mb-0 font-main leading-5" style="padding-bottom: 10px">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-white">
+                            <tr>
+                                </tr><tr class="text-black text-sm leading-5"><td class="pl-1 pr-5 py-2"><p class="text-sm font-main leading-5 m-0" style="padding-bottom: 8px">On March 18–22, close to 40 Hilton team members – attended the California State University, Northridge (CSUN) assistive technology conference in Anaheim, California. The CSUN conference is the premier technology forum for people with disabilities. Zane McHattie, Adam Page, and Nicole Bergstrom delivered an engaging presentation, Beyond Silos:  Hilton’s Cross-functional Accessibility Model, drawing a crowd of over 50 people and asserting Hilton’s maturity in digital accessibility delivery. </p></td></tr>
+                                <tr class="text-black text-sm leading-5 text-center"><td class="pl-1 pr-5 py-2"><img src="../images/csun-presentation.png" alt="Adam, Zane and Nicole sitting at table for their Beyond Silos: Hilton&#039;s Cross-Functional Accessibility Model presentation" class="w-3-4" width="75%"></td></tr><tr></tr>
+                                <tr class="text-black text-sm leading-5"><td class="pl-1 pr-5 py-2"><p class="text-sm font-main leading-5 m-0" style="padding-bottom: 8px">If conference attendance wasn’t enough.  On March 21, the Hilton conference attendees partnered with the Hilton Anaheim to celebrate World Down Syndrome Day with the Lots of Socks campaign.  Everyone wore mismatched socks, signifying the unique trisomy of the 21st chromosome that’s responsible for Down syndrome.  The hotel set up a “Lots of Socks” booth in the lobby staffed by Abilities TMRG members and invited guests to design a sock for the day. </p></td></tr>
+                                <tr class="text-black text-sm leading-5 text-center"><td class="pl-1 pr-5 py-2"><img src="../images/csun-lotsofsocks.png" alt="Nicole, Meredith, LaTonya, and Jill holding down the WDS table at the Anaheim." class="w-3-4" width="75%"></td></tr><tr></tr>
+                                <tr class="text-black text-sm leading-5"><td class="pl-1 pr-5 py-2"><p class="text-sm font-main leading-5 m-0" style="padding-bottom: 8px">CSUN along with the Hilton Anaheim’s engagement is a highly immersive experience.  Hilton attendees leave with broader understanding of the disability community and become strong A11y champions.  Here’s what attendees had to say about the conference: </p></td></tr>
+                                <tr class="text-black text-sm leading-5"><td class="pl-1 pr-5 py-2"><p class="text-sm font-main leading-5 m-0" style="padding-bottom: 8px">“CSUN was an amazing conference to attend, for many reasons. The excitement and passion around accessibility was palpable, and it was clear that everyone there had a genuine interest in making the world a better place—for everyone. Meeting in person with the leading experts in assistive technology was an invaluable experience, and I left with an even deeper appreciation for the accessibility advocates we work with here at Hilton.” – <strong>Regan Rusnak, Product Manager, Brand Pod</strong> </p></td></tr>
+                                <tr class="text-black text-sm leading-5"><td class="pl-1 pr-5 py-2"><p class="text-sm font-main leading-5 m-0" style="padding-bottom: 8px">“This year I was fortunate to have my second opportunity to join the Hilton team in Anaheim and attend the CSUN Assistive Technology Conference. Each year I attend this conference I learn more and more about our users that engage with Hilton products through the usage of assistive technologies, and this experience always serves to reset the importance of focusing on accessibility in our products.” – <strong>Carter Capocaccia, Senior Manager, Quality Engineering</strong> </p></td></tr>
+                                <tr class="text-black text-sm leading-5"><td class="pl-1 pr-5 py-2"><p class="text-sm font-main leading-5 m-0" style="padding-bottom: 8px">“I learned that I’ve been unintentionally ableist when I thought I was being an ally. I left CSUN with more tools in my toolbox and a deeper level of empathy that will make me more effective on the ATRMG leadership team as well as in the recruiting space. The other significant takeaway for me was getting to know the other Hilton TMs that attended and the incredible amount of work Hilton is doing in the accessibility space!” – <strong>Meredith Moore, Senior Manager, Early Talent, Hotel Operations</strong> </p></td></tr>
+                                <tr class="text-black text-sm leading-5"><td class="pl-1 pr-5 py-2"><p class="text-sm font-main leading-5 m-0" style="padding-bottom: 8px">That’s all for CSUN 2024 but keep an eye out for registration to CSUN 2025.   The accessibility team will provide details on how to register closer to the date. </p></td></tr>
+                                <tr class="text-black text-sm leading-5"><td class="pl-1 pr-5 py-2"><p class="text-sm font-main leading-5 m-0" style="padding-bottom: 8px"><a href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/CSUN-Gallery.aspx" style="text-decoration: underline">CSUN 2024 Gallery</a> </p></td></tr>
+                            </table></td></tr><tr>
+                        </tr></table>
                     
-                                <p class="text-sm m-0">Accessibility annotations are a hands-on, efficient, and scalable way for designers to communicate needs to engineers.  ​The accessibility team has created an accessibility annotations kit for Figma to do this.  Within the kit you can find annotations for alt text, headings, alerts, notes, landmarks and reading order and tab order. </p>
-                                <p class="text-sm m-0">Accessibility annotations should be done in Figma after designs are at a point where they are ready for being annotated (Final designs or close to final designs).  Accessibility annotations should follow the general template given by the accessibility team. </p>
-                                <p class="text-sm m-0"> <a href="https://www.figma.com/file/OACUNHKfUHsXQ58MqqRuz4/TR-A11y-Annotation-Kit?node-id=1269%3A2053" style="text-decoration: underline">Documentation and Figma file of kit</a></p>
-                            
-                </td>
-            </tr>
-        </table>
-    </td>
-</tr>
+                
+        
+    
+</table>
 <!-- 1 Column Text + Button : END -->
-                            <!-- 1 Column Text + Button : BEGIN -->
-<tr name="feature">
-    <td>
-        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-white">
-            <tr>
-                <td class="px-5 py-2_5">
-                    <h2 class="m-0 text-orange font-main text-h1">Feature: The Americans with Disabilities Act (ADA) turns 32!</h2>
-                </td>
-            </tr>
-            <tr>
-                <td class="text-black text-sm mb-0 font-main px-5 leading-5" style="padding-bottom: 10px">
-                    
-                                <p class="text-sm m-0">July 26 was National Disability Independence day and it was also the same day that the American with Disabilities Act (ADA) turned 32.  This historic civil rights law protects the rights of people with disabilities. </p>
-                                <p class="text-sm m-0">The ADA is a civil rights law that prohibits discrimination against individuals with disabilities in all areas of public life, including jobs, schools, transportation, and all public and private places that are open to the general public. The purpose of the law is to make sure that people with disabilities have the same rights and opportunities as everyone else. </p>
-                                <p class="text-sm m-0">For more information view the <a href="https://adaanniversary.org/" style="text-decoration: underline">ADA Anniversary Toolkit</a></p>
-                            
-                </td>
-            </tr>
-        </table>
-    </td>
-</tr>
-<!-- 1 Column Text + Button : END -->
-                        <tr class="bg-white">
-    <td style="padding-bottom: 10px; padding-left: 20px; padding-right: 20px">
-        <div>
-            <h2 class="m-0 font-main text-orange text-h1 text-left font-bold">News</h2>
-        </div>
-    </td>
-</tr>
                         <!-- 2 Even Columns : BEGIN -->
 <tr>
-    <td align="center" valign="top" style="font-size: 0; background-color: #ffffff" class="pl-2_5 pr-2_5 pb-2_5">
+    <td align="center" valign="top" style="font-size: 0; background-color: #ffffff" class="pb-4">
         <!--[if mso]>
         <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
         <tr>
         <td valign="top" width="330">
         <![endif]-->
-        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+        <div style="display:inline-block; margin: 0; width:100%; min-width:200px; max-width:295px; vertical-align:top;" class="stack-column">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
-                    <td class="pl-2_5">
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left" class="relative">
+                    <td>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 12px; text-align: left" class="relative">
                             <tr>
-                                <td>
-                                    <img src="../images/W3C.jpg" width="310" height="310" alt="W3C logo" class="w-full max-w-2-column h-2-column">
+                                <td class="text-sm font-main py-2 leading-5">
+                                    <h2 class="m-0 text-orange font-main text-h1" style="font-size: 20px">Contest: The Power of Alt Text</h2>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-sm font-main py-2_5 leading-5">
-                                    <h3 class="m-0 font-bold"><a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/" class="text-orange" style="text-decoration: underline; font-size: 1.2em">WCAG 2.2 candidate recommendation</a></h3>
+                                <td style="padding-bottom: 8px">
+                                    <img src="../images/alt-text.png" width="295" height="295" alt="A dog sitting on an luggage with other luggage coming out of the back of a van" class="w-full max-w-2-column max-h-2-column">
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-sm font-main leading-5">
-                                    <p style="margin: 0;">On Tuesday August 30, 2022, the WCAG working group agreed to move forward with the WCAG 2.2 candidate recommendation.  WCAG is the Web content accessibility guidelines and are the standard which we follow here at Thomson Reuters.  It is also the basis of many laws around the world.  Members on the Thomson Reuters accessibility team also participate in the accessibility guidelines working group that helps decides on the guidelines themselves.  </p>
-                                </td>
+                                <td class="text-sm font-main leading-5" style="padding-bottom: 8px">
+                                    
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 12px; text-align: left" class="relative">
+                            <tr class="text-black text-sm leading-5"><td class="pl-1 pr-5 py-2"><p class="text-sm font-main leading-5 m-0" style="padding-bottom: 8px">Images have a story to tell, and alternative text (alt) is here so screen readers can be the voice for them. The alt also serves as a backup when the image cannot be displayed or fails to load. </p></td></tr>
+                            <tr class="text-black text-sm leading-5"><td class="pl-1 pr-5 py-2"><p class="text-sm font-main leading-5 m-0" style="padding-bottom: 8px">If a picture is worth a thousand words, how do we sum it up in only a few? First, consider the context: is the image decorative, informative, or illustrative of a feeling or emotion? Tailor the alt text accordingly. Be descriptive, not literal. Avoid bland descriptions and opt for descriptive yet concise text. </p></td></tr>
+                            <tr class="text-black text-sm leading-5"><td class="pl-1 pr-5 py-2"><p class="text-sm font-main leading-5 m-0" style="padding-bottom: 8px">Some platforms automatically generate alt text using AI. While this can be a helpful starting point, it’s essential to review and refine the text to be consistent with Hilton's established tone and voice for public-facing content. </p></td></tr>
+                            <tr class="text-black text-sm leading-5"><td class="pl-1 pr-5 py-2"><p class="text-sm font-main leading-5 m-0" style="padding-bottom: 8px">Imagine the photo in this article is being used to advertise our pet-friendly properties. What would you write for the alt text? Get creative and let us know in our <a href="https://engage.cloud.microsoft/main/org/hilton.com/threads/eyJfdHlwZSI6IlRocmVhZCIsImlkIjoiMjc1NTQ2MDk2MzM3NzE1MiJ9?trk_copy_link=V2" style="text-decoration: underline">Viva Engage post</a> and you could win a Starbucks gift card! </p></td></tr>
+                        </table>
+                                    </td>
                             </tr>
                         </table>
                     </td>
@@ -513,25 +559,25 @@
         </td>
         <td valign="top" width="330">
         <![endif]-->
-        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+        <div style="display:inline-block; margin: 0; width:100%; min-width:200px; max-width:295px; vertical-align:top;" class="stack-column">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
-                    <td class="px-2_5">
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left">
+                    <td class="px-2">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 12px; text-align: left">
                             <tr>
-                                <td>
-                                    <img width="310" height="310" src="../images/figmalogo.png" alt="Figma Logo" class="w-full max-w-2-column h-2-column">
+                                <td class="text-sm font-main py-2 leading-5">
+                                    <h2 class="m-0 text-orange font-main text-h1" style="font-size: 20px">Sign up for GAAD 2024</h2>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-sm font-main py-2_5 leading-5">
-                                    <h3 class="m-0 pb-2_5"><a href="https://help.figma.com/hc/en-us/articles/7810391964695" class="text-orange" style="text-decoration: underline; font-size: 1.2em">Accessible prototypes in Figma</a></h3>
+                                <td style="padding-bottom: 8px">
+                                    <img width="295" height="295" src="../images/GAAD.png" alt="GAAD logo" class="w-full max-w-2-column max-h-2-column">
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-sm font-main leading-5">
-                                    <p style="margin: 0;">Figma announce a prototype screen reader beta that includes support for text notes, alt text for images, and the ability to interact with and navigate through prototypes with buttons and keyboard actions like tabbing.</p>
-                                </td>
+                                <td class="text-sm font-main leading-5" style="padding-bottom: 8px">
+                                    
+                                        <p style="margin: 0;">Join us on another exciting journey of inclusion May 14–16 as we celebrate GAAD around the world, inspired by this year’s theme: ‘Make it Right, Make it Accessible.’ Immerse in a range of activities tailored to champion accessibility in the Dallas, Memphis, McLean, Glasgow, Dubai, and Watford offices. Can’t join us in person? Sign up for engaging online sessions including our keynote speaker Joe Devon, the co-founder and chair of the GAAD Foundation. Brought to you by the Hilton Digital Accessibility team with support from the Abilities TMRG, and a village of volunteers. </p><p>Visit the <a href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/GAAD-2024.aspx" style="text-decoration: underline">GAAD SharePoint site</a> to sign up for events and learn more</p></td>
                             </tr>
                         </table>
                     </td>
@@ -548,31 +594,31 @@
 <!-- 2 Even Columns : END -->
                         <!-- 2 Even Columns : BEGIN -->
 <tr>
-    <td align="center" valign="top" style="font-size: 0; background-color: #ffffff" class="pl-2_5 pr-2_5 pb-2_5">
+    <td align="center" valign="top" style="font-size: 0; background-color: #ffffff" class="pb-4">
         <!--[if mso]>
         <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
         <tr>
         <td valign="top" width="330">
         <![endif]-->
-        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+        <div style="display:inline-block; margin: 0; width:100%; min-width:200px; max-width:295px; vertical-align:top;" class="stack-column">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
-                    <td class="pl-2_5">
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left" class="relative">
+                    <td>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 12px; text-align: left" class="relative">
                             <tr>
-                                <td>
-                                    <img src="../images/getsitelogo.jpg" width="310" height="310" alt="2022 TR Global Technology Unconference Logo" class="w-full max-w-2-column h-2-column">
+                                <td class="text-sm font-main py-2 leading-5">
+                                    <h2 class="m-0 text-orange font-main text-h1" style="font-size: 20px">An accessible solar eclipse</h2>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-sm font-main py-2_5 leading-5">
-                                    <h3 class="m-0 font-bold"><a href="https://trten.sharepoint.com/sites/intr-global-technology-unconference" class="text-orange" style="text-decoration: underline; font-size: 1.2em">TR accessibility team presenting at 2022 TR Global Technology Unconference</a></h3>
+                                <td style="padding-bottom: 8px">
+                                    <img src="../images/april-8-eclipse.jpg" width="295" height="295" alt="Total Solar Eclipse 2024" class="w-full max-w-2-column max-h-2-column">
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-sm font-main leading-5">
-                                    <p style="margin: 0;">September 14-16 is the TR Global Technology Unconference.  The accessibility team has four presentations at the conference.  On September 14th at 11:00am CDT, Rachel Braaten will be presenting an overview of the TR accessiiblity program overview.  At 1:00pm CDT that same day, Wil Ilagan and Philip Springall will be presenting Designing for Accessibility and Inclusion: The accessibility team&#039;s role in design pods.  On September 15 at 11:00am CDT, Gavin Ogston and Kate Zhao will be presenting Developming for accessibility - you&#039;re not alone and on the same day at 1:00pm CDT, Philip Springall and Caryn Pagel will be presenting Secrets of Accessibility Experts REVEALED!.  Join us on September 14 and 15 at the TR Global Technology Unconference</p>
-                                </td>
+                                <td class="text-sm font-main leading-5" style="padding-bottom: 8px">
+                                    
+                                        <p style="margin: 0;">Millions of people across America traveled to witness the solar eclipse on April 8. It was a great day for our Hilton hotels within the path of totality as many were sold out with people gathering to experience the astronomical spectacle. There were many warnings to not stare directly at the sun without proper eye protection, but did you ever wonder what it was like for people who cannot see? There was plenty of other sensory anomalies to experience during the eclipse: cooling temperatures, the sounds of nighttime insects and, thanks to innovative technologies, the ability to ‘touch the sun.’ Tactile and audible learning experiences are made available thanks to organizations such as <a href="https://sservi.nasa.gov/books/eclipses.html" style="text-decoration: underline">NASA</a>, <a href="https://astrolab.fas.harvard.edu/LightSound.html" style="text-decoration: underline">The LightSound Project</a>, <a href="https://www.youtube.com/watch?v=lfH3gSpcHlw" style="text-decoration: underline">American Printing House (APH)</a>, and <a href="https://www.perkins.org/resource/watching-solar-eclipse-low-vision/" style="text-decoration: underline">Perkins School for the Blind.</a></p></td>
                             </tr>
                         </table>
                     </td>
@@ -583,25 +629,28 @@
         </td>
         <td valign="top" width="330">
         <![endif]-->
-        <div style="display:inline-block; margin: 0 -1px; width:100%; min-width:200px; max-width:330px; vertical-align:top;" class="stack-column">
+        <div style="display:inline-block; margin: 0; width:100%; min-width:200px; max-width:295px; vertical-align:top;" class="stack-column">
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
-                    <td class="px-2_5">
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left">
+                    <td class="px-2">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 12px; text-align: left">
                             <tr>
-                                <td>
-                                    <img width="310" height="310" src="../images/accessibilitytesting.jpeg" alt="Computer with assistive device symbols on screen" class="w-full max-w-2-column h-2-column">
+                                <td class="text-sm font-main py-2 leading-5">
+                                    <h2 class="m-0 text-orange font-main text-h1" style="font-size: 20px">Design system accessibility</h2>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-sm font-main py-2_5 leading-5">
-                                    <h3 class="m-0 pb-2_5"><a href="https://trten.sharepoint.com/:x:/r/sites/TRDesign/Shared%20Documents/General/A11y%20and%20UX%20Design%20Org%20Structure.xlsx?d=w76643854c8e041ec9c39e69e0007fb56&amp;csf=1&amp;web=1&amp;e=A3kF7I" class="text-orange" style="text-decoration: underline; font-size: 1.2em">TR Accessibility testing team assignments</a></h3>
+                                <td style="padding-bottom: 8px">
+                                    <img width="295" height="295" src="../images/design-system.png" alt="The universal symbol for accessibility next to a color pallate and text" class="w-full max-w-2-column max-h-2-column">
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-sm font-main leading-5">
-                                    <p style="margin: 0;">At Thomson Reuters we have a dedicated team for accessibility testing.  We also now have dedicated accessibility testers for each design pod.  This will allow the accessibility testing be more streamlined with the dedicated accessibility tester.  Along with the dedicated testers there are is an new accessibility testing process that the accessibility team has created.  This will involve using some of the tooling, Level Access AMP, that will provide an easier way to understand the accessibility bugs that arise</p>
-                                </td>
+                                <td class="text-sm font-main leading-5" style="padding-bottom: 8px">
+                                    
+                                        <p style="margin: 0;">Design systems are very important when thinking about accessibility.  Accessibility can be baked into every part of a design system by making sure that every design component and code element is aligned to accessibility standards at the beginning of process.  One thing that can be lost when thinking about design systems is thinking that using the design system will solve all accessibility issues.  This is not always the case.
+                            </p><p>Color contrast must be taking into account when using components.  A design system colors may take into account accessibility, but it’s the use of the colors with respect to each other that should be considered.</p>
+                            <p>When using accessible components, the interactions between each component should be considered.  A component might be accessible on its own, but when put into the scope of an page or screen, it’s the interactions between the components that should be looked at as well.</p>
+                            <p></p></td>
                             </tr>
                         </table>
                     </td>
@@ -616,33 +665,31 @@
     </td>
 </tr>
 <!-- 2 Even Columns : END -->
-                        <!--<component 
-                            src="thumbleft-textright.html"
-                            image="../images/a11ycasts.jpeg"
-                            alt="A computer with a11ycasts on the screen"
-                            heading="TR Accessibility Podcast"
-                            text="We have an official podcast where we will be discussing the ongoings of our accessibility team, news from the accessibility industry and updates to best practices and processes"></component> -->
-                        <tr class="bg-white">
-    <td style="padding-bottom: 10px; padding-left: 20px; padding-right: 20px">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr class="bg-white">
+    <td class="pl-1 pr-5 pb-3">
         <div>
-            <h2 class="m-0 font-main text-orange text-h1 text-left font-bold">Links</h2>
+            <h2 class="m-0 text-orange font-main text-h1">Recommended reads</h2>
         </div>
     </td>
-</tr>
+    </tr>
+</table>
+                        <tr class="bg-white">
+    <td class="pl-1 pr-5 py-2">
+        <div class="pl-1 pr-5 py-2">
+            <h3 class="m-0 text-orange font-main text-h1">Design system accessibility:</h3>
+        </div>
+    </td>
+</tr> 
                         <tr>
     <td>
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-white">
             <tr>
-                <td class="m-0">
-                    <ul>
+                <td class="m-0 text-black text-sm font-main leading-5 pl-1 pr-5 pb-2">
+                    <ul class="m-0">
                         
-                            <li><a class="font-main tracking-normal" style="text-decoration: underline" href="https://www.theverge.com/23203911/screen-readers-history-blind-henter-curran-teh-nvda">The Hidden History of Screen Readers (The Verge)</a></li>
-                            <li><a class="font-main tracking-normal" style="text-decoration: underline" href="https://aeon.co/essays/what-does-it-mean-to-consider-yourself-a-disabled-person">Am I disabled? (Aeon)</a></li>
-                            <li><a class="font-main tracking-normal" style="text-decoration: underline" href="https://www.lflegal.com/2022/07/ada-32/">#ADA32: The ADA has applied to digital for decades (Lainey Feingold)</a></li>
-                            <li><a class="font-main tracking-normal" style="text-decoration: underline" href="https://equalentry.com/accessibility-tactical-communication/">Speaking up and speaking out: Tactical communication in accessibility (Equal Entry)</a></li>
-                            <li><a class="font-main tracking-normal" style="text-decoration: underline" href="https://makeitfable.com/glossary/">Assistive technology glossary (Fable)</a></li>
-                            <li><a class="font-main tracking-normal" style="text-decoration: underline" href="https://www.a11yproject.com/posts/large-touch-targets/">Quick test: Large touch targets (The A11y Project)</a></li>
-                            <li><a class="font-main tracking-normal" style="text-decoration: underline" href="https://tetralogical.com/blog/2022/08/01/inclusive-user-research-recruiting-participants/">Inclusive user research: recruiting participants (Tetralogical)</a></li>
+                            <li class="listitem-link"><a class="font-main tracking-normal text-sm font-main leading-5" style="text-decoration: underline" href="https://www.uxpin.com/studio/blog/design-system-accessibility/">Design System Accessibility: Check What You Need to Know (UXPin)</a></li>
+                            <li class="listitem-link"><a class="font-main tracking-normal text-sm font-main leading-5" style="text-decoration: underline" href="https://stripe.com/blog/accessible-color-systems">Designing accessible color systems (Stripe)</a></li>
                         
                     </ul>
                 </td>
@@ -651,9 +698,9 @@
     </td>
 </tr>
                         <tr class="bg-white">
-    <td style="padding-bottom: 10px; padding-left: 20px; padding-right: 20px">
-        <div>
-            <h2 class="m-0 font-main text-orange text-h1 text-left font-bold">Events</h2>
+    <td class="pl-1 pr-5 py-2">
+        <div class="pl-1 pr-5 py-2">
+            <h3 class="m-0 text-orange font-main text-h1">Accessible Travel:</h3>
         </div>
     </td>
 </tr>
@@ -661,11 +708,10 @@
     <td>
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-white">
             <tr>
-                <td class="m-0">
-                    <ul>
+                <td class="m-0 text-black text-sm font-main leading-5 pl-1 pr-5 pb-2">
+                    <ul class="m-0">
                         
-                            <li><a class="font-main tracking-normal" style="text-decoration: underline" href="https://conference.webaim.org/">Web Accessibility in Mind - September 7 + 8 (In person &amp; virtual)</a></li>
-                            <li><a class="font-main tracking-normal" style="text-decoration: underline" href="https://conf.a11yto.com/">a11yTO Conf - September 18 &amp; 19 (In person &amp; virtual)</a></li>
+                            <li class="listitem-link"><a class="font-main tracking-normal text-sm font-main leading-5" style="text-decoration: underline" href="https://curbfreewithcorylee.com/">Curb Free with Cory Lee: A Wheelchair Travel Blog</a></li>
                         
                     </ul>
                 </td>
@@ -673,48 +719,69 @@
         </table>
     </td>
 </tr>
-                        <tr class="bg-white">
-    <td style="padding-bottom: 10px; padding-left: 20px; padding-right: 20px">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr class="bg-white">
+    <td class="pl-1 pr-5 pb-3">
         <div>
-            <h2 class="m-0 font-main text-orange text-h1 text-left font-bold">Resources</h2>
+            <h2 class="m-0 text-orange font-main text-h1">Learn and network at upcoming events</h2>
         </div>
     </td>
+    </tr>
+</table>
+                        <tr>
+    <td>
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-white">
+            <tr>
+                <td class="m-0 text-black text-sm font-main leading-5 pl-1 pr-5 pb-2">
+                    <ul class="m-0">
+                        
+                            <li class="listitem-link"><a class="font-main tracking-normal text-sm font-main leading-5" style="text-decoration: underline" href="https://www.eventbrite.com/e/ai-accessibility-and-users-with-disabilities-gaad-tickets-859077031527">AI, Accessibility and Users with Disabilities (GAAD) Webinar– WeCo Accessibility- May 16, 2024 – Online – Free</a></li>
+                            <li class="listitem-link"><a class="font-main tracking-normal text-sm font-main leading-5" style="text-decoration: underline" href="https://knowbility.org/programs/accessu-2024">John Slatin AccessU Conference – Knowability – May 13 – 16, 2024 – Online and In Person - Paid</a></li>
+                        
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </td>
 </tr>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr class="bg-white">
+    <td class="pl-1 pr-5 pb-3">
+        <div>
+            <h2 class="m-0 text-orange font-main text-h1">Resources</h2>
+        </div>
+    </td>
+    </tr>
+</table>
                         <tr>
     <td>
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
             <tr>
-                <td width="640" height class="bg-clip-content w-full bg-white">
-                    <p class="font-main my-0 mx-5 text-base">Here are some Thomson Reuters Accessibility Team Resources to help you with your everyday needs:</p>        
-                </td>
-            </tr>
-            <tr>
-                <td class="bg-white pb-5"></td>
-            </tr>
-            <tr>
-                <td class="pb-5">
+                <td>
                     <center>
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="text-center items-center bg-white pb-2_5">
-                            <tr role="listitem"><td class="w-emailfull" style="margin-left: 0; margin-right: 0; padding: 13px 20px; background: #666666; border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: underline; color: #ffffff; display: block"><a class="button-a button-a-primary text-center items-center text-white" href="https://trten.sharepoint.com/sites/intr-digital-accessibility-coe">Digital Accessibility Center of Excellence</a></td></tr>
-                            <tr role="listitem"><td class="w-emailfull" style="margin-left: auto; margin-right: auto; padding: 13px 20px; background: #666666; border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: underline; color: #ffffff; display: block"><a class="button-a button-a-primary text-center items-center text-white" href="https://trten.sharepoint.com/sites/intr-digital-accessibility-coe/SitePages/Visual-design-accessibility-requirements.aspx">Visual design accessibility requirements</a></td></tr>
-                            <tr role="listitem"><td class="w-emailfull" style="margin-left: auto; margin-right: auto; padding: 13px 20px; background: #666666; border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: underline; color: #ffffff; display: block"><a class="button-a button-a-primary text-center items-center text-white" href="https://trten.sharepoint.com/sites/intr-digital-accessibility-coe/SitePages/Accessibility-component-acceptance-criteria.aspx">Accessibility component acceptance criteria library</a></td></tr>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="text-center items-center bg-white">
+                            <tr role="listitem"><td class="w-emailfull" style="margin-left: 0; margin-right: 0; padding: 12px 20px; background: #232323; border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; font-family: sans-serif; font-size: 16px; line-height: 16px; color: #ffffff; display: block"><a class="button-a button-a-primary text-center items-center text-white visited-purple" style="text-decoration: underline" href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/Accessibility-Center-of-Excellence.aspx"><strong style="font-weight:normal">Accessibility Center of Excellence</strong></a></td></tr>
+                            <tr role="listitem"><td class="w-emailfull" style="margin-left: auto; margin-right: auto; padding: 12px 20px; background: #232323; border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; font-family: sans-serif; font-size: 16px; line-height: 16px; color: #ffffff; display: block"><a class="button-a button-a-primary text-center items-center text-white visited-purple" style="text-decoration: underline" href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/Contact-the-A11y-Team.aspx"><strong style="font-weight:normal">Accessibility Team’s open Office Hours - Thursday 2pm CST - Add to Calendar</strong></a></td></tr>
+                            <tr role="listitem"><td class="w-emailfull" style="margin-left: auto; margin-right: auto; padding: 14px 20px; background: #232323; border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; font-family: sans-serif; font-size: 16px; line-height: 16px; color: #ffffff; display: block"><a class="button-a button-a-primary text-center items-center text-white visited-purple" style="text-decoration: underline" href="https://hiltonreservations.co1.qualtrics.com/jfe3/preview/previewId/00e271b1-1e96-4b48-81f0-e2e2b59d7321/SV_aeBiE3e4RBpOWAC?Q_CHL=preview&Q_SurveyVersionID=current"><strong style="font-weight:normal">Help build our inclusive research panel</strong></a></td></tr>
+                            <tr role="listitem"><td class="w-emailfull" style="margin-left: auto; margin-right: auto; padding: 14px 20px; background: #232323; border-top: 1px solid #ffffff; border-bottom: 1px solid #ffffff; font-family: sans-serif; font-size: 16px; line-height: 16px; color: #ffffff; display: block"><a class="button-a button-a-primary text-center items-center text-white visited-purple" style="text-decoration: underline" href="mailto:digital.accessibility@hilton.com"><strong style="font-weight:normal">Email: digital.accessibility@hilton.com</strong></a></td></tr>
                         </table>
                     </center>
                 </td>
             </tr>
         </table>
+        &nbsp;
     </td>
 </tr>
                         <!-- Email Footer : BEGIN -->
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" style="max-width: 680px" class="bg-white border-t-2 border-t-orange border-b-white border-solid border-l-white border-r-white">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="max-width: 680px" class="bg-dark-logo border-t-2 border-l-0 border-r-0 border-b-0 border-solid">
     <tr>
-        <td style="text-align: right" class="p-0">
-            <a href="https://www.thomsonreuters.com"><img alt="Thomson Reuters Homepage" src="../images/trlogo.jpg" width="225" height="67"></a>
+        <td style="text-align: center" class="py-5">
+            <a href="https://www.hilton.com"><img alt="Hilton" src="../images/Hilton_FTS_Logo_RGB_Horiz_White.png" height="50"></a>
         </td>
     </tr>
 </table>
 <!-- Email Footer : END -->
-                    </table>
+                    
                     <!-- Email Body : END -->
         
         

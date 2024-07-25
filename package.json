@@ -2,28 +2,22 @@
   "private": true,
   "scripts": {
     "dev": "maizzle serve",
-    "build": "strapi build",
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "strapi": "strapi",
-    "dev-all": "strapi develop & maizzle serve"
+    "build": "maizzle build production"
   },
   "dependencies": {
+    "@maizzle/cli": "^1.5.7",
     "@maizzle/framework": "latest",
+    "better-sqlite3": "7.4.6",
+    "tailwind": "^4.0.0",
     "tailwindcss-box-shadow": "^2.0.0",
     "tailwindcss-email-variants": "^2.0.0",
-    "tailwindcss-mso": "^1.3.0",
-    "@strapi/strapi": "4.4.5",
-    "@strapi/plugin-users-permissions": "4.4.5",
-    "@strapi/plugin-i18n": "4.4.5",
-    "better-sqlite3": "7.4.6"
+    "tailwindcss-mso": "^1.3.0"
   },
   "name": "accessible-email",
   "version": "0.1.0",
-  "description": "A Strapi application",
-  "devDependencies": {},
+  "description": "A Mazzle application",
   "author": {
-    "name": "A Strapi developer"
+    "name": "A mazzle developer"
   },
   "strapi": {
     "uuid": "3b4ad2fa-e9a0-4c7b-be08-a6ad0123560a"

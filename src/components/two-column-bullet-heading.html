@@ -1,0 +1,98 @@
+<!-- 2 Even Columns : BEGIN -->
+<tr>
+    <td align="center" valign="top" style="font-size:0; background-color: #ffffff;" class="pb-4">
+        <!--[if mso]>
+        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+        <tr>
+        <td valign="top" width="330">
+        <![endif]-->
+        <div style="display:inline-block; margin: 0; width:100%; min-width:200px; max-width:295px; vertical-align:top;" class="stack-column">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                    <td>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 12px; text-align: left;" class="relative">
+                            <tr>
+                                <td class="text-sm font-main py-2 leading-5">
+                                    <h2 class="m-0 text-orange font-main text-h1" style="font-size: 20px">{{{ heading1 }}}</h2>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom:8px">
+                                    <img src="{{{ image1 }}}" width="295" height="295" alt="{{{ alt1 }}}" class="w-full max-w-2-column max-h-2-column">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-sm font-main leading-5" style="padding-bottom: 8px">
+                                    <if condition="{{ text1 !== null || text2 !== null}}">
+                                        <if condition="{{{ bullet1 != null || bullet2 != null }}}">
+                                            <p style="margin: 0; padding-bottom: 8px" >{{{ text1 }}}</p>
+                                            <ul class="m-0 text-black text-sm font-main leading-5" style="padding-bottom: 8px">
+                                                <if condition="{{{ bullet1 != null }}}"><li><if condition="{{{ bullet1link != null }}}"><a href="{{{ bullet1link }}}" style="text-decoration:underline">{{{ bullet1 }}}</a></if><else>{{{ bullet1 }}}</else></li></if>
+                                                <if condition="{{{ bullet1 != null }}}"><li><if condition="{{{ bullet2link != null }}}"><a href="{{{ bullet2link }}}" style="text-decoration:underline">{{{ bullet2 }}}</a></if><else>{{{ bullet2 }}}</else></li></if>
+                                            </ul>
+                                            <if condition="{{{ link1 != null }}}"><p style="margin: 0;" >{{{ text2 }}}  <a href="{{{ link1 }}}" style="text-decoration:underline">{{{ linkText1 }}}</a></p></if>
+                                            <else><p style="margin: 0;" >{{{ text2 }}}</p>
+                                        </if>
+                                        <else><p style="margin: 0;" >{{{ text1 }}}</p></else>
+                                    </if>
+                                    <else>
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 12px; text-align: left;" class="relative"><content></content></table>
+                                    </else>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--[if mso]>
+        </td>
+        <td valign="top" width="330">
+        <![endif]-->
+        <div style="display:inline-block; margin: 0; width:100%; min-width:200px; max-width:295px; vertical-align:top;" class="stack-column">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                    <td class="px-2">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 12px; text-align: left;">
+                            <tr>
+                                <td class="text-sm font-main py-2 leading-5">
+                                    <h2 class="m-0 text-orange font-main text-h1" style="font-size: 20px">{{{ heading2 }}}</h2>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding-bottom:8px">
+                                    <img width="295" height="295" src="{{{ image2 }}}" alt="{{{ alt2 }}}" class="w-full max-w-2-column max-h-2-column">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-sm font-main leading-5" style="padding-bottom: 8px">
+                                    <if condition="{{ text3 == null && text4 == null}}">
+                                        <content></content>
+                                    </if>
+                                    <else>
+                                        <if condition="{{{ bullet3 != null || bullet4 != null }}}">
+                                            <p style="margin: 0; padding-bottom: 8px" >{{{ text3 }}}</p>
+                                            <ul class="m-0 text-black text-sm font-main leading-5" style="padding-bottom: 8px">
+                                                <if condition="{{{ bullet3 != null }}}"><li><if condition="{{{ bullet3link != null }}}"><a href="{{{ bullet3link }}}" style="text-decoration:underline">{{{ bullet3 }}}</a></if><else>{{{ bullet3 }}}</else></li></if>
+                                                <if condition="{{{ bullet4 != null }}}"><li><if condition="{{{ bullet4link != null }}}"><a href="{{{ bullet4link }}}" style="text-decoration:underline">{{{ bullet4 }}}</a></if><else>{{{ bullet4 }}}</else></li></if>
+                                            </ul>
+                                            <if condition="{{{ link2 != null }}}"><p style="margin: 0;" >{{{ text4 }}}  <a href="{{{ link2 }}}" style="text-decoration:underline">{{{ linkText2 }}}</a></p></if>
+                                            <else><p style="margin: 0;" >{{{ text4 }}}</p>
+                                        </if>
+                                        <else><p style="margin: 0;" >{{{ text3 }}}</p></else>
+                                    </else>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--[if mso]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+    </td>
+</tr>
+<!-- 2 Even Columns : END -->

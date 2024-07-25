@@ -1,0 +1,72 @@
+<!-- 2 Even Columns : BEGIN -->
+<tr>
+    <td align="center" valign="top" style="font-size:0; background-color: #ffffff;" class="pl-2 pr-2 pb-4">
+        <!--[if mso]>
+        <table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660">
+        <tr>
+        <td valign="top" width="330">
+        <![endif]-->
+        <div style="display:inline-block; margin: 0; width:100%; min-width:200px; max-width:326px; vertical-align:top; padding-right:4px" class="stack-column">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                    <td class="pl-2">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 12px; text-align: left;" class="relative">
+                            <tr>
+                                <td style="">
+                                    <img src="{{ image1 }}" width="304" height="304" alt="{{ alt1 }}" class="w-full max-w-2-column max-h-2-column">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-sm font-main py-2 leading-5">
+                                    <h3 class="m-0 font-bold">{{ heading1 }}</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-sm font-main leading-5" style="padding-bottom: 8px">
+                                    <if condition="{{ link1 != null }}"><p style="margin: 0;" >{{ text1 }}<a href="{{ link1 }}" style="text-decoration:underline">{{ linkText1 }}</a></p></if>
+                                    <else><p style="margin: 0;" >{{ text1 }}</p></else>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--[if mso]>
+        </td>
+        <td valign="top" width="330">
+        <![endif]-->
+        <div style="display:inline-block; margin: 0; width:100%; min-width:200px; max-width:326px; vertical-align:top;" class="stack-column">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                    <td class="px-2">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 12px; text-align: left;">
+                            <tr>
+                                <td>
+                                    <img width="304" height="304" src="{{ image2 }}" alt="{{ alt2 }}" class="w-full max-w-2-column max-h-2-column">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-sm font-main py-2 leading-5">
+                                    <h3 class="m-0 pb-2">{{ heading2 }}</h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-sm font-main leading-5" style="padding-bottom: 8px">
+                                    <if condition="{{ link2 != null }}"><p style="margin: 0;" >{{ text2 }}<a href="{{ link2 }}" style="text-decoration:underline">{{ linkText2 }}</a></p></if>
+                                    <else><p style="margin: 0;" >{{ text2 }}</p></else>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--[if mso]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+    </td>
+</tr>
+<!-- 2 Even Columns : END -->

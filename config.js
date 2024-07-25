@@ -12,20 +12,20 @@
 module.exports = {
   build: {
     templates: {
-      source: 'maizzle/src/templates',
+      source: 'src/templates/',
       destination: {
         path: 'build_local',
       },
       assets: {
-        source: 'maizzle/src/images',
+        source: 'src/images/',
         destination: 'images',
       },
     },
     layouts: {
-      root: "./maizzle/src/layouts/"
+      root: "src/layouts/"
     },
     components: {
-      root: "./maizzle/src/components/"
+      root: "src/components/"
     }
   },
 }

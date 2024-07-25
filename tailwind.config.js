@@ -31,6 +31,7 @@ module.exports = {
         10: '40px',
         11: '44px',
         12: '48px',
+        13: '55px',
         14: '56px',
         16: '64px',
         20: '80px',
@@ -79,6 +80,7 @@ module.exports = {
         '9/12': '75%',
         '10/12': '83.333333%',
         '11/12': '91.666667%',
+        '2-column': '310px'
       },
       borderRadius: {
         none: '0px',
@@ -103,13 +105,15 @@ module.exports = {
         sans: ['ui-sans-serif', 'system-ui', '-apple-system', '"Segoe UI"', 'sans-serif'],
         serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
         mono: ['ui-monospace', 'Menlo', 'Consolas', 'monospace'],
+        main: ['loews-bold','arial','sans-serif'],
+        subheading: ['loews','arial','sans-serif']
       },
       fontSize: {
         0: '0',
         xxs: '11px',
         xs: '12px',
         '2xs': '13px',
-        sm: '14px',
+        sm: '16px',
         '2sm': '15px',
         base: '16px',
         lg: '18px',
@@ -144,12 +148,21 @@ module.exports = {
         '7xl': '640px',
       }),
       minHeight: theme => ({
-        ...theme('spacing'),
+        ...theme('spacing')
       }),
       minWidth: theme => ({
         ...theme('spacing'),
       }),
     },
+    colors: {
+      'navy-blue': '#214C92',
+      'white': '#ffffff',
+      'gray': '#f1f1f1',
+      'navy-logo': "#074b99",
+      'dark-logo': "#232323",
+      'lightblue-logo': "#B1D7FF",
+      'purple': "#9D4CDC"
+    }
   },
   corePlugins: {
     preflight: false,
