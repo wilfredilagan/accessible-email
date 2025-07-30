@@ -1,23 +1,21 @@
 <!-- 1 Column Text + Button : BEGIN -->
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-    <tr name="feature">
-        <td>
-                <if condition="typeof image !== 'undefined'">
-                    <tr>
-                        <td class="font-main text-center">
-                            <div style="padding-bottom:8px">
-                                <img src="{{ image }}" alt="{{ alt }}" class="w-3/4" width="75%">
-                            </div>
-                        </td>
-                    </tr>
-                </if>
-                <tr>
-                    <td class="text-black text-sm mb-0 font-main leading-5" style="padding-bottom: 10px">
-                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-white">
-                            <tr><content></content><tr>
-                        </table>
-                    </td>
-                </tr>
+    <tr class="bg-lightblue-bg" style="border: 0;">
+        <td width="12" color="bordercolor" style="width:12px; background-color:{{bordercolor}}"></td>
+        <td class="pl-3 pr-5 py-3" style="border:0">
+            <div>
+                <h2 class="m-0 font-main text-2xl">{{ heading }}</h2>
+            </div>
+        </td>
+    </tr>
+    <tr class="{{background}}" style="padding-bottom:12px">
+        <td width="12" color="{{bordercolor}}" style="width:12px; background-color:{{bordercolor}}"></td>
+            <td class="text-black text-sm mb-0 font-main leading-4.5">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="text-black visited:blue-bg-visted">
+                <tr><td class="font-main pl-3 pr-3 pb-3" style="mso-hyphenate: none;">
+                    <content></content>
+                </td><tr>
+            </table>
         </td>
     </tr>
 </table>

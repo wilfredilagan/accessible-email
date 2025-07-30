@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+  <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+      <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+      <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+      <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+      <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
+      <meta name="color-scheme" content="light">
+      <meta name="supported-color-schemes" content="light">
+      <title>Unlocking Accessibility: Issue 10</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+  
+      <!--[if (gte mso 9)|(IE)]>
+        <style type="text/css">
+        table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        mso-table-lspace: 0pt !important;
+        mso-table-rspace: 0pt !important; }
+        </style>
+     <![endif]-->
+      <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+      <!--[if gte mso 9]>
+      <xml>
+          <o:OfficeDocumentSettings>
+              <o:AllowPNG/>
+              <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+      </xml>
+      <![endif]-->
+  
+      <!-- Web Font / @font-face : BEGIN -->
+      <!-- NOTE: If web fonts are not required, lines 23 - 41 can be safely removed. -->
+  
+      <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+      <!--[if mso]>
+          <style>
+              * {
+                  font-family: sans-serif !important;
+              }
+          </style>
+      <![endif]-->
+  
+      <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+      <!--[if !mso]><!-->
+      <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+      <!--<![endif]-->
+  
+      <!-- Web Font / @font-face : END -->
+  
+      <!-- CSS Reset : BEGIN -->
+      <style>/* What it does: Tells the email client that only light styles are provided but the client can transform them to dark. A duplicate of meta color-scheme meta tag above. */
+          :root {
+            color-scheme: light;
+            supported-color-schemes: light;
+          }
+  
+          /* What it does: Remove spaces around the email design added by some email clients. */
+          /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+          html,
+          body {
+              margin: 0 auto !important;
+              padding: 0 !important;
+              height: 100% !important;
+              width: 100% !important;
+          }
+  
+          /* What it does: Stops email clients resizing small text. */
+          * {
+              -ms-text-size-adjust: 100%;
+              -webkit-text-size-adjust: 100%;
+          }
+  
+          /* What it does: Centers email on Android 4.4 */
+          div[style*="margin: 16px 0"] {
+              margin: 0 !important;
+          }
+          /* What it does: forces Samsung Android mail clients to use the entire viewport */
+          #MessageViewBody, #MessageWebViewDiv{
+              width: 100% !important;
+          }
+  
+          /* What it does: Stops Outlook from adding extra spacing to tables. */
+          table,
+          td {
+              mso-table-lspace: 0pt !important;
+              mso-table-rspace: 0pt !important;
+          }
+
+          /* What it does: Fixes webkit padding issue. */
+          table {
+              border-spacing: 0 !important;
+              border-collapse: collapse !important;
+              table-layout: fixed !important;
+              margin: 0 auto !important;
+          }
+  
+          /* What it does: Uses a better rendering method when resizing images in IE. */
+          img {
+              -ms-interpolation-mode:bicubic;
+          }
+  
+          /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+  
+          /* What it does: A work-around for email clients meddling in triggered links. */
+          a[x-apple-data-detectors],  /* iOS */
+          .unstyle-auto-detected-links a,
+          .aBn {
+              border-bottom: 0 !important;
+              cursor: default !important;
+              color: inherit !important;
+              text-decoration: none !important;
+              font-size: inherit !important;
+              font-family: inherit !important;
+              font-weight: inherit !important;
+              line-height: inherit !important;
+          }
+  
+          /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+          .im {
+              color: inherit !important;
+          }
+  
+          /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+          .a6S {
+              display: none !important;
+              opacity: 0.01 !important;
+          }
+          /* If the above doesn't work, add a .g-img class to any image in question. */
+          img.g-img + div {
+              display: none !important;
+          }
+          
+          p {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%; 
+            font-family: loews-bold, arial, sans-serif; 
+            font-size: 14px; 
+            line-height: 18px;
+          }
+
+          ol > li {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%; 
+            font-family: loews-bold, arial, sans-serif !important; 
+            font-size: 14px !important; 
+            line-height: 18px !important;
+          }
+
+          ul > li {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%; 
+            font-family: loews-bold, arial, sans-serif !important; 
+            font-size: 14px !important; 
+            line-height: 18px !important;
+          }
+
+          h3 {
+            -ms-text-size-adjust: 100%; 
+            -webkit-text-size-adjust: 100%; 
+            margin-top: 10px; 
+            margin-bottom: 10px
+          }
+
+          a {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            text-decoration: underline;
+            color: #0000EE;
+            text-decoration-line: underline
+          }
+
+
+          /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+          /* Create one of these media queries for each additional viewport size you'd like to fix */
+  
+          /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+          @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+              u ~ div .email-container {
+                  min-width: 320px !important;
+              }
+          }
+          /* iPhone 6, 6S, 7, 8, and X */
+          @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+              u ~ div .email-container {
+                  min-width: 375px !important;
+              }
+          }
+          /* iPhone 6+, 7+, and 8+ */
+          @media only screen and (min-device-width: 414px) {
+              u ~ div .email-container {
+                  min-width: 414px !important;
+              }
+          }</style>
+      <!-- CSS Reset : END -->
+  
+      <!-- Progressive Enhancements : BEGIN -->
+      <style>/* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+        .button-td-primary:hover,
+        .button-a-primary:hover {
+            background: #404040 !important;
+            border-color: #404040 !important;
+        }
+        
+        .mobile-table {
+            mso-hide:all;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 714px) {
+
+            .feature-image {
+                width: 100%;
+                height: 100%;
+            }
+
+            .article-image {
+                display:block !important;
+                float:none !important;
+                margin: 0 auto 25px auto!important;
+            }
+
+
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+                text-align: center !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center, .column-image {
+                text-align: center !important;
+            }
+  
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+  
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+
+            .listitem-link {
+                padding-bottom: 8px;
+            } 
+
+            span {
+                -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%; 
+            font-family: loews-bold, arial, sans-serif !important; 
+            font-size: 17px !important; 
+            line-height: 18px !important;    
+            }
+
+            ol > li {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%; 
+            font-family: loews-bold, arial, sans-serif !important; 
+            font-size: 17px !important; 
+            line-height: 18px !important;
+            }
+
+            ul > li {
+                -ms-text-size-adjust: 100%;
+                -webkit-text-size-adjust: 100%; 
+                font-family: loews-bold, arial, sans-serif !important; 
+                font-size: 17px !important; 
+                line-height: 18px !important;
+            }
+
+            .mobile-table {
+                display: block !important;
+                mso-hide:none !important;
+            }
+
+            .half-image{
+            width: 335px;
+            display:block;
+                float:none;
+                margin: 0 auto 25px auto;
+            }
+        }</style>
+<style>.keep-blue { 
+    mso-style-textfill-type:gradient; 
+    mso-style-textfill-fill-gradientfill-stoplist:"0 \#B1D7FF -1 100000\,100000 \#B1D7FF -1 100000"; 
+    color:#0F4C97 !important; 
+    }
+
+    .keep-white { 
+    mso-style-textfill-type:gradient; 
+    mso-style-textfill-fill-gradientfill-stoplist:"0 \#FFFFFF 0 100000\,100000 \#FFFFFF 0 100000"; 
+    color:#000000 !important; 
+    }</style>
+        <!--[if (gte mso 9)|(IE)]>
+            <style type="text/css">
+                .largebutton li {
+                    text-indent: -3em;
+                }
+            </style>
+        <![endif]-->
+      <!-- Progressive Enhancements : END -->
+      
+        <style>/* Tailwind CSS components */
+/**
+ * @import here any custom CSS components - that is, CSS that
+ * you'd want loaded before the Tailwind utilities, so the
+ * utilities can still override them.
+*/
+/* Tailwind CSS utility classes */
+.collapse {
+    visibility: collapse !important
+}
+.fixed {
+    position: fixed !important
+}
+.absolute {
+    position: absolute !important
+}
+.relative {
+    position: relative !important
+}
+.float-right {
+    float: right !important
+}
+.float-left {
+    float: left !important
+}
+.float-none {
+    float: none !important
+}
+.m-0 {
+    margin: 0 !important
+}
+.m-1 {
+    margin: 4px !important
+}
+.ml-3 {
+    margin-left: 12px !important
+}
+.mb-3 {
+    margin-bottom: 12px !important
+}
+.mr-3 {
+    margin-right: 12px !important
+}
+.mb-0 {
+    margin-bottom: 0 !important
+}
+.mb-2 {
+    margin-bottom: 8px !important
+}
+.mt-0 {
+    margin-top: 0 !important
+}
+.mt-6 {
+    margin-top: 24px !important
+}
+.mt-2_5 {
+    margin-top: 10px !important
+}
+.mb-2_5 {
+    margin-bottom: 10px !important
+}
+.mt-2 {
+    margin-top: 8px !important
+}
+.mt-3 {
+    margin-top: 12px !important
+}
+.block {
+    display: block !important
+}
+.inline-block {
+    display: inline-block !important
+}
+.inline {
+    display: inline !important
+}
+.table {
+    display: table !important
+}
+.grid {
+    display: grid !important
+}
+.hidden {
+    display: none !important
+}
+.max-h-2-column {
+    max-height: 310px !important
+}
+.w-full {
+    width: 100% !important
+}
+.w-3-4 {
+    width: 75% !important
+}
+.max-w-2-column {
+    max-width: 310px !important
+}
+.border-collapse {
+    border-collapse: collapse !important
+}
+.transform {
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important
+}
+.border {
+    border-width: 1px !important
+}
+.bg-dark-logo {
+    background-color: #232323 !important
+}
+.bg-white {
+    background-color: #ffffff !important
+}
+.p-0 {
+    padding: 0 !important
+}
+.py-1 {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important
+}
+.py-3 {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important
+}
+.py-2 {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important
+}
+.px-5 {
+    padding-left: 20px !important;
+    padding-right: 20px !important
+}
+.px-2 {
+    padding-left: 8px !important;
+    padding-right: 8px !important
+}
+.pl-3 {
+    padding-left: 12px !important
+}
+.pr-3 {
+    padding-right: 12px !important
+}
+.pb-3 {
+    padding-bottom: 12px !important
+}
+.pb-0 {
+    padding-bottom: 0 !important
+}
+.pr-5 {
+    padding-right: 20px !important
+}
+.pb-1 {
+    padding-bottom: 4px !important
+}
+.pt-3 {
+    padding-top: 12px !important
+}
+.pb-6 {
+    padding-bottom: 24px !important
+}
+.pl-4 {
+    padding-left: 16px !important
+}
+.pb-2 {
+    padding-bottom: 8px !important
+}
+.pb-4 {
+    padding-bottom: 16px !important
+}
+.pl-1 {
+    padding-left: 4px !important
+}
+.text-left {
+    text-align: left !important
+}
+.text-center {
+    text-align: center !important
+}
+.font-main {
+    font-family: loews-bold, arial, sans-serif !important
+}
+.text-base {
+    font-size: 16px !important
+}
+.text-sm {
+    font-size: 16px !important
+}
+.text-2xl {
+    font-size: 24px !important
+}
+.text-xl {
+    font-size: 20px !important
+}
+.text-2sm {
+    font-size: 15px !important
+}
+.text-3xl {
+    font-size: 30px !important
+}
+.font-medium {
+    font-weight: 500 !important
+}
+.font-bold {
+    font-weight: 700 !important
+}
+.uppercase {
+    text-transform: uppercase !important
+}
+.italic {
+    font-style: italic !important
+}
+.leading-4_5 {
+    line-height: 18px !important
+}
+.leading-4 {
+    line-height: 16px !important
+}
+.leading-5 {
+    line-height: 20px !important
+}
+.tracking-normal {
+    letter-spacing: 0em !important
+}
+.text-white {
+    color: #ffffff !important
+}
+.underline {
+    text-decoration-line: underline !important
+}
+.ring {
+    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color) !important;
+    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color) !important;
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000) !important
+}
+.filter {
+    filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important
+}
+.transition {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter !important;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition-duration: 150ms !important
+}
+.word-break-break-word {
+    word-break: break-word
+}
+.-webkit-font-smoothing-antialiased {
+    -webkit-font-smoothing: antialiased
+}
+/* Your custom utility classes */
+/*
+ * Here is where you can define your custom utility classes.
+ *
+ * We wrap them in the `utilities` @layer directive, so
+ * that Tailwind moves them to the correct location.
+ *
+ * More info:
+ * https://tailwindcss.com/docs/functions-and-directives#layer
+*/</style>
+      
+  </head>
+
+<body class="m-0 p-0 w-full word-break-break-word -webkit-font-smoothing-antialiased bg-background body">
+    <style>@media screen and (min-width: 600px) {
+            #mobile-table {
+                display: none;
+                font-size: 0;
+                max-height: 0;
+                line-height: 0;
+                padding: 0;
+            }
+
+            .mobile-td {
+            display:none;
+            }
+
+            .half-image{
+                display: inline;
+                width: 49%;
+                height: 49%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            [owa] .desktop-table,
+            .desktop-table {
+                display: none !important;
+                mso-hide: all;
+            }
+
+
+.feature-image {
+    width: 100%;
+    height: 100%;
+}
+
+
+.article-image {
+    display:block !important;
+    float:none !important;
+    margin: 0 auto 25px auto!important;
+}
+
+
+/* What it does: Forces table cells into full-width rows. */
+.stack-column,
+.stack-column-center {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    direction: ltr !important;
+    text-align: center !important;
+}
+/* And center justify these ones. */
+.stack-column-center {
+    text-align: center !important;
+}
+
+/* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+.center-on-narrow {
+    text-align: center !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+}
+table.center-on-narrow {
+    display: inline-block !important;
+}
+
+/* What it does: Adjust typography on small screens to improve readability */
+.email-container p {
+    font-family: loews-bold, arial, sans-serif; 
+    font-size: 17px !important; 
+    line-height: 18px;
+    padding-bottom: 12px;
+    }
+
+.listitem-link {
+    padding-bottom: 8px;
+} 
+
+span {
+    -ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; 
+font-family: loews-bold, arial, sans-serif !important; 
+font-size: 17px !important; 
+line-height: 18px !important;    
+}
+
+ol > li {
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; 
+font-family: loews-bold, arial, sans-serif !important; 
+font-size: 17px !important; 
+line-height: 18px !important;
+}
+
+ul > li {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%; 
+    font-family: loews-bold, arial, sans-serif !important; 
+    font-size: 17px !important; 
+    line-height: 18px !important;
+}
+
+.mobile-table{
+    display: block !important;
+    mso-hide:none !important;
+}
+        }</style>
+    
+                <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+                <!-- Preview Text Spacing Hack : BEGIN -->
+                <!--<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+                    &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+                </div> -->
+                <!-- Preview Text Spacing Hack : END -->
+        
+                <!--
+                    Set the email width. Defined in two places:
+                    1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+                    2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+                    Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+                -->
+                    <!--[if mso]>
+                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+                    <tr>
+                    <td>
+                    <![endif]-->
+                <div style="max-width: 700px; margin: 0 auto;" class="email-container" width="700">    
+                    <!-- Email Body : BEGIN -->
+                        <!-- Hero Image, Flush : BEGIN -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td class="text-center">
+            <img src="../images/unlock-hero-light.png" align="center" alt="'Unlocking Accessibility' logo, with a fingerprint in the center of a lock.  Tagline: Every room for everyone every time.  (In the tagline) All instances of every are bolded." border="0" style="margin: auto; margin: auto; height: auto; display: block" class="g-img w-full" width="728" height="121">
+        </td>
+    </tr>
+</table>
+<!-- Hero Image, Flush : END -->
+                        <!-- 1 Column Text + Button : BEGIN -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr class="bg-lightblue-bg">
+        <td class="font-main text-center">
+            <div>
+                <img src="../images/autismawareness.png" alt="Autism Awareness ribbon with different colored hands behind it" style="width: 100%; margin: 0 auto" width="728" height="230" class="feature-image">
+            </div>
+        </td>
+    </tr>
+</table>
+<!-- 1 Column Text + Button : END -->
+                        <!-- 1 Column Text + Button : BEGIN -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr class="bg-lightblue-bg" style="border: 0;">
+        <td width="12" color="bordercolor" style="width: 12px; background-color: #10B79C"></td>
+        <td class="pl-3 pr-5 py-3" style="border: 0">
+            <div>
+                <h2 class="m-0 font-main text-2xl">Empowering Team Member Voices: Autism Awareness Month 2025</h2>
+            </div>
+        </td>
+    </tr>
+    <tr class="bg-lightblue-bg" style="padding-bottom:12px">
+        <td width="12" color="#10b79c" style="width: 12px; background-color: #10B79C"></td>
+            <td class="text-black text-sm mb-0 font-main leading-4_5">
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="text-black visited-blue-bg-visted">
+                <tr><td class="font-main pl-3 pr-3 pb-3" style="mso-hyphenate: none">
+                    
+                            <p>Autism, or Autism Spectrum Disorder, is a developmental condition that presents a spectrum of experiences, from challenges in social interaction and communication to remarkable talents in areas like mathematics, music, and art. Early diagnosis and intervention are crucial, acting as keys to unlocking the full potential of individuals with autism.</p>
+                            <p>Autism Awareness Month is celebrated annually in April to foster understanding and acceptance.</p>
+                            <p>This year’s theme, ‘Empowering Team Member Voices,’ seeks to amplify the unique perspectives and contributions of individuals with autism. Imagine a world where every voice is heard, every story is told, and every individual is celebrated for their unique view of the world.</p>
+                            <p>Autism Awareness Month is a vibrant reminder of our ongoing efforts to support and celebrate the neurodiverse community. Through increased awareness, education, and advocacy, we can work together to create a more inclusive and understanding society.</p>
+                            <p>The Abilities Team Member Resource Group (ATMRG) will host a panel of team members at 10 am CT April 17 during their bimonthly meeting. Team members who identify as being on the autism spectrum and caregivers for people with autism will share their stories. Visit the <a href="https://teams.microsoft.com/l/channel/19%3A968c2dd83f7a480e87113ca8dedd2d24%40thread.tacv2/General?groupId=9e676e6b-200d-4f8d-b29b-ab2add74421b&tenantId=660292d2-cfd5-4a3d-b7a7-e8f7ee458a0a">ATMRG Teams Channel</a> for the meeting reminder, resources about Autism Awareness Month, and conversations in the channel.</p>
+                        
+                </td></tr><tr>
+            </tr></table>
+        </td>
+    </tr>
+</table>
+<!-- 1 Column Text + Button : END -->
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-beige-bg text-black text-left">
+    <tr>
+    <td width="12" color="bordercolor" style="width: 12px; background-color: #002F61"></td>
+    <td class="pl-3 pr-5 py-3 m-0">
+        <div>
+            <h2 class="m-0 font-main text-2xl">Social influencer spotlight</h2>
+        </div>
+    </td>
+    </tr>
+</table>
+                        <!-- 1 Column Text + Button : BEGIN -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="padding-left: 12px">
+    <tr class="bg-beige-bg" style="padding-bottom:12px">
+        <td width="6" color="#002f61" style="background-color: #002F61; width: 12px"></td>
+        <td class="font-main pl-3 pr-3 pb-3">
+            <!--[if mso]>
+            <table role="presentation" border="0" cellpadding="0" width="346" cellspacing="0" align="right" style="width:200px; height=195px"><tr><td style="padding:5px 5px 12px 12px;">
+            <![endif]-->
+            <span>
+                <img src="../images/social_listening.png" alt="Madilynn and Mom" align="right" width="200" height="195" class="article-image float-right ml-3 mb-3 mr-3">
+            </span>
+            <!--[if mso]>
+        </td></tr></table>
+        <![endif]-->
+            
+                        <span class="text-sm font-main leading-4_5 py-1 m-0 text-left" style="padding-bottom: 8px">
+                            <h3>Home2 Suites makes a family stay extra special</h3>
+                            <p>We recently received a story that warmed our hearts! <a href="https://www.instagram.com/reel/DETdWVqyWJm/">A mom reached out on Instagram</a> to share her gratitude for the accessible features at our Home2 Suites.</p>
+                            <p>This family’s stay was made unforgettable thanks to the hotel room’s accessible features like grab bars and spacious rooms that allowed her daughter to move around comfortably with her walker. For the mom, this wasn’t just about a hotel room, it was about her daughter experiencing independence in a way that’s not always possible.</p>
+                            <p>And the best part? Her daughter’s excitement was so huge that her joyful scream of happiness made the mom’s ears literally ring! 😂</p>
+                            <p>This story serves as a reminder how important an accessible stay experience benefits everyone! 🌟</p>
+                        </span>
+                        
+        </td>
+    </tr>
+    
+</table>
+<!-- 1 Column Text + Button : END -->
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-lightblue-bg text-black text-left">
+    <tr>
+    <td width="12" color="bordercolor" style="width: 12px; background-color: #9D4CDC"></td>
+    <td class="pl-3 pr-5 py-3 m-0">
+        <div>
+            <h2 class="m-0 font-main text-2xl">March contest: Autism Awareness trivia</h2>
+        </div>
+    </td>
+    </tr>
+</table>
+                        <!-- 1 Column Text + Button : BEGIN -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="padding-left: 12px">
+    <tr class="bg-lightblue-bg" style="padding-bottom:12px">
+        <td width="6" color="#9d4cdc" style="background-color: #9D4CDC; width: 12px"></td>
+        <td class="font-main pl-3 pr-3 pb-3">
+            <!--[if mso]>
+            <table role="presentation" border="0" cellpadding="0" width="346" cellspacing="0" align="right" style="width:230px; height=121px"><tr><td style="padding:5px 5px 12px 12px;">
+            <![endif]-->
+            <span>
+                <img src="../images/austismawareness.jpg" alt="A hand with many little multi-colored hands within it.  Autism Awareness" align="right" width="230" height="121" class="article-image float-right ml-3 mb-3 mr-3">
+            </span>
+            <!--[if mso]>
+        </td></tr></table>
+        <![endif]-->
+            
+                        <span class="text-sm font-main leading-4_5 py-1 m-0 text-left" style="padding-bottom: 8px">
+                            <p>In celebration of Autism Awareness Month, we're hosting a trivia challenge! Participants who answer all 7 questions about autism correctly before April 23 will be entered into a drawing to win a tote bag of their choice from <a href="https://www.madamclutterbuckets.com/collections/madam-clutterbuckets-tote-bags?browse=%2Fcollections%2Fmadam-clutterbuckets-tote-bags&filter.v.availability=1&filter.v.price.gte=0&filter.v.price.lte=25">Madam Clutterbuckets</a>.</p>
+                            <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=0pICZtXPPUq3p-j37kWKCrea_ARpMpdNjarzGirGCk1UNlM5MDJCNk1GUVdRTTFOMjNVM05NSzU0SS4u">Play the Autism Awareness trivia</a>.</p>
+                        </span>
+                        
+        </td>
+    </tr>
+    
+</table>
+<!-- 1 Column Text + Button : END -->
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-lightblue-bg text-black text-left">
+    <tr>
+    <td width="12" color="bordercolor" style="width: 12px; background-color: #9D4CDC"></td>
+    <td class="pl-3 pr-5 py-3 m-0">
+        <div>
+            <h2 class="m-0 font-main text-2xl">World Down Syndrome Awareness Day Contest Winners</h2>
+        </div>
+    </td>
+    </tr>
+</table>
+                        <!-- 1 Column Text + Button : BEGIN -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="padding-left: 12px">
+    <tr class="bg-lightblue-bg" style="padding-bottom:12px">
+        <td width="6" color="#9d4cdc" style="background-color: #9D4CDC; width: 12px"></td>
+        <td class="font-main pl-3 pr-3 pb-3">
+            <p>Congratulations to our 3 winners of the Down Syndrome Awareness Day Flash Contest and a huge thanks for writing your own alt texts! We hope your socks help you spread awareness about the Lots of Socks campaign and complete a rocking outfit! Check out the video, <a href="https://hilton.sharepoint.com/:v:/s/AbilitiesTMRG/EToDCwyDiPFGgQMwG6ZB5HcBUm5GsFDoTmhgrHJA6RLoxw?e=khOUMv">Around the Hilton World in 21 Socks</a>, to see how Hilton team members showed their support.</p>
+        </td>
+    </tr>
+</table>
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="padding-top: 12px; padding-left: 12px">
+    <tr class="bg-lightblue-bg" style="padding-bottom:12px">
+        <td width="6" color="#9d4cdc" style="background-color: #9D4CDC; width: 12px"></td>
+        <td class="stack-column-center font-main pl-4 pr-3 pb-3">
+            <img src="../images/rachan_dixit.jpg" alt="Rachana wearing a peacock blue with a pink border saree, attempt a catwalk." width="200" height="200">
+            <p><strong>Rachan Dixit</strong>: Manager, Quality Engineering</p>
+        </td>
+        <td class="stack-column-center font-main pl-3 pr-3 pb-2">
+            <img src="../images/thais_magane.jpg" alt="Thais Magane is smiling and wearing Logan Magane in a baby carrier while Logan looks at the camera, wondering why his mom can't stop taking selfies with him." width="200" height="200">
+            <p><strong>Thais Magane</strong>: Sr Manager, Content Innovation</p>
+        </td>
+        <td class="stack-column-center font-main pb-4 pl-3 pr-3">
+            <img src="../images/lora.jpg" alt="Lora's selfie in which she is wearing a white t-shirt and a bucket hat with a yellow rubber ducks pattern on a sandy beach. " width="200" height="200">
+            <p><strong>Lora Rusinouskaya</strong>: Software Engineer, SE-Web Platform</p>
+        </td>
+    </tr>
+</table>
+<!-- 1 Column Text + Button : END -->
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-beige-bg text-black text-left">
+    <tr>
+    <td width="12" color="bordercolor" style="width: 12px; background-color: #00B050"></td>
+    <td class="pl-3 pr-5 py-3 m-0">
+        <div>
+            <h2 class="m-0 font-main text-2xl">A11y Cats comic strip</h2>
+        </div>
+    </td>
+    </tr>
+</table>
+                        <!-- 1 Column Text + Button : BEGIN -->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="padding-left: 12px">
+    <tr class="bg-beige-bg" style="padding-bottom:12px">
+        <td width="6" color="#00b050" style="background-color: #00B050; width: 12px"></td>
+        <td class="font-main pl-3 pr-3 pb-3">
+            
+                        <span class="text-sm font-main leading-4_5 py-1 m-0 text-left" style="padding-bottom: 8px">
+                            <p>Welcome to the whimsical world of A11y Cats! Join our curious and clever feline friends as they embark on adventures to explore the importance of accessibility and inclusivity in the digital age. Through their playful banter and insightful discoveries, these cats will show you how small changes can make a big difference for everyone. Get ready for a paws-itively delightful blend of fun and learning with the A11y Cats!</p>
+                            <div><img src="../images/a11ycats1-1.jpg" width="335" height="335" class="half-image" alt="Panel 1: Two cats sit in front of a laptop computer.  Cat 1: “Hey, do you know what ‘a11y’ means?”. Cat 2: “A new cat food?!”.
+                            ">
+                            <img src="../images/a11ycats1-2.jpg" width="335" height="335" class="half-image" alt="Panel 2: Cat 1: “It's short for ‘accessibility’! The ‘11’ represents the 11 letters between ‘a’ and ‘y.’”.
+                                "></div>
+                            
+                            <div><img src="../images/a11ycats1-3.jpg" width="335" height="335" class="half-image" alt="Panel 3: Cat 2: “Oh, like ‘i18n’ for internationalization? So, is a11y good for i18n too?”.
+                            ">
+                            <img src="../images/a11ycats1-4.jpg" width="335" height="335" class="half-image" alt="Panel 4: Cat 1: “Exactly! Both make things better for everyone – whether it’s for people with disabilities or reaching global audiences.”. Cat 2: “Purr-fect, I wanna be an a11y cat!”
+                            "></div>
+                        </span>
+                        
+        </td>
+    </tr>
+    
+</table>
+<!-- 1 Column Text + Button : END -->
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-white text-black text-left">
+    <tr>
+    <td width="12" color="bordercolor" style="width: 12px; background-color: #000000"></td>
+    <td class="pl-3 pr-5 py-3 m-0">
+        <div>
+            <h2 class="m-0 font-main text-2xl">Connect with us</h2>
+        </div>
+    </td>
+    </tr>
+</table>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr role="listitem" class="text-left"><td width="6" color="#000000" style="background-color: #000000; width: 12px"></td><td class="w-emailfull" style="margin-left: 0; margin-right: 0; padding: 12px 20px; background: #FFFFFF; font-family: sans-serif; font-size: 15px; line-height: 16px; color: #000000; display: block"><p class="text-2sm font-main leading-4_5 m-0">To get future issues of Unlocking Accessibility, subscribe using our <a class="button-a button-a-primary visited-purple font-main tracking-normal text-2smleading-4_5" style="text-decoration: underline" href="https://forms.office.com/r/5A4s8bgfpT"><strong style="font-weight:normal">sign up form</strong></a></p></td></tr>
+    <tr role="listitem" class="text-left"><td width="6" color="#000000" style="background-color: #000000; width: 12px"></td><td class="w-emailfull" style="margin-left: 0; margin-right: 0; padding: 12px 20px; background: #FFFFFF; font-family: sans-serif; font-size: 15px; line-height: 16px; color: #000000; display: block"><p class="text-2sm font-main leading-4_5 m-0">Join our <a class="button-a button-a-primary visited-purple font-main tracking-normal text-2smleading-4_5" style="text-decoration: underline" href="https://teams.microsoft.com/l/team/19%3ApYhRabqQHbFslbAjjZIz68Z_puPeLQddP2sDXCZrN5Q1%40thread.tacv2/conversations?groupId=24efbafd-5565-49cc-81ed-a381a71936d8&tenantId=660292d2-cfd5-4a3d-b7a7-e8f7ee458a0a"><strong style="font-weight:normal">Accessibility Central Teams Channel</strong></a> to get your accessibility questions answered</p></td></tr>
+    <tr role="listitem" class="text-left"><td width="6" color="#000000" style="background-color: #000000; width: 12px"></td><td class="w-emailfull" style="margin-left: auto; margin-right: auto; padding: 12px 20px; background: #FFFFFF; font-family: sans-serif; font-size: 15px; line-height: 16px; color: #000000; display: block"><p class="text-2sm font-main leading-4_5 m-0">Get technical product delivery support: Drop in to our <a class="button-a button-a-primary visited-purple font-main tracking-normal text-2smleading-4_5" style="text-decoration: underline" href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/Contact-the-A11y-Team.aspx"><strong style="font-weight:normal">Digital A11y Office Hours</strong></a>: Thursday 2pm CST</p></td></tr>
+    <tr role="listitem" class="text-left"><td width="6" color="#000000" style="background-color: #000000; width: 12px"></td><td class="w-emailfull" style="margin-left: auto; margin-right: auto; padding: 12px 20px; background: #FFFFFF; font-family: sans-serif; font-size: 15px; line-height: 16px; color: #000000; display: block"><p class="text-2sm font-main leading-4_5 m-0">Access A11y self-service resources: Visit <a class="button-a button-a-primary visited-purple font-main tracking-normal text-2smleading-4_5" style="text-decoration: underline" href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/Accessibility-Center-of-Excellence.aspx"><strong style="font-weight:normal">Accessibility Center of Excellence</strong></a></p></td></tr>
+    <tr role="listitem" class="text-left"><td width="6" color="#000000" style="background-color: #000000; width: 12px"></td><td class="w-emailfull" style="margin-left: auto; margin-right: auto; padding: 14px 20px; background: #FFFFFF; font-family: sans-serif; font-size: 15px; line-height: 16px; color: #000000; display: block"><a class="button-a button-a-primary font-main tracking-normal text-2smleading-4_5" style="text-decoration: underline" href="mailto:digital.accessibility@hilton.com"><strong style="font-weight:normal">Email: digital.accessibility@hilton.com</strong></a></td></tr>
+</table>
+                        <!-- Email Footer : BEGIN -->
+<center>
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-dark-logo">
+    <tr>
+        <td style="text-align: center">
+            <a href="https://www.hilton.com"><img alt="Hilton" src="../images/Hilton_FTS_Logo_RGB_Horiz_White-wide.png" width="728" height="53" class="feature-image w-full"></a>
+        </td>
+    </tr>
+</table>
+</center>
+<!-- Email Footer : END -->
+                    
+                    <!-- Email Body : END -->
+                </div>
+                <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->     
+    
+</body>
+</html>

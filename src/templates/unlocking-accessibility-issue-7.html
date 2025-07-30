@@ -1,0 +1,109 @@
+<extends src="main.html">
+    <block name="template">
+                <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+                <!-- Preview Text Spacing Hack : BEGIN -->
+                <!--<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+                    &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+                </div> -->
+                <!-- Preview Text Spacing Hack : END -->
+        
+                <!--
+                    Set the email width. Defined in two places:
+                    1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+                    2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+                    Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+                -->
+                    <!--[if mso]>
+                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+                    <tr>
+                    <td>
+                    <![endif]-->
+                <div style="max-width: 700px; margin: 0 auto;" class="email-container" width="700">    
+                    <!-- Email Body : BEGIN -->
+                        <component src="hero.html"></component>
+                        <component src="feature-image.html"
+                        image="../images/autismawareness.png"
+                        alt="Autism Awareness ribbon with different colored hands behind it"
+                        width="728"
+                        height="230"
+                        ></component>
+                        <component src="feature.html" 
+                            background="bg-lightblue-bg"
+                            bordercolor="#10B79C"
+                            heading="Empowering Team Member Voices: Autism Awareness Month 2025">
+                            <p>Autism, or Autism Spectrum Disorder, is a developmental condition that presents a spectrum of experiences, from challenges in social interaction and communication to remarkable talents in areas like mathematics, music, and art. Early diagnosis and intervention are crucial, acting as keys to unlocking the full potential of individuals with autism.</p>
+                            <p>Autism Awareness Month is celebrated annually in April to foster understanding and acceptance.</p>
+                            <p>This year’s theme, ‘Empowering Team Member Voices,’ seeks to amplify the unique perspectives and contributions of individuals with autism. Imagine a world where every voice is heard, every story is told, and every individual is celebrated for their unique view of the world.</p>
+                            <p>Autism Awareness Month is a vibrant reminder of our ongoing efforts to support and celebrate the neurodiverse community. Through increased awareness, education, and advocacy, we can work together to create a more inclusive and understanding society.</p>
+                            <p>The Abilities Team Member Resource Group (ATMRG) will host a panel of team members at 10 am CT April 17 during their bimonthly meeting. Team members who identify as being on the autism spectrum and caregivers for people with autism will share their stories. Visit the <a href="https://teams.microsoft.com/l/channel/19%3A968c2dd83f7a480e87113ca8dedd2d24%40thread.tacv2/General?groupId=9e676e6b-200d-4f8d-b29b-ab2add74421b&tenantId=660292d2-cfd5-4a3d-b7a7-e8f7ee458a0a">ATMRG Teams Channel</a> for the meeting reminder, resources about Autism Awareness Month, and conversations in the channel.</p>
+                        </component>
+                        <component src="h2-background.html" text="Social influencer spotlight" color="beige-bg" bordercolor="#002F61" textcolor="black" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/social_listening.png"
+                        alt="Madilynn and Mom"
+                        background="bg-beige-bg"
+                        bordercolor="#002F61"
+                        width="200"
+                        height="195">
+                        <component src="p-inline-test.html" background="bg-beige-bg">
+                            <h3>Home2 Suites makes a family stay extra special</h3>
+                            <p>We recently received a story that warmed our hearts! <a href="https://www.instagram.com/reel/DETdWVqyWJm/">A mom reached out on Instagram</a> to share her gratitude for the accessible features at our Home2 Suites.</p>
+                            <p>This family’s stay was made unforgettable thanks to the hotel room’s accessible features like grab bars and spacious rooms that allowed her daughter to move around comfortably with her walker. For the mom, this wasn’t just about a hotel room, it was about her daughter experiencing independence in a way that’s not always possible.</p>
+                            <p>And the best part? Her daughter’s excitement was so huge that her joyful scream of happiness made the mom’s ears literally ring! 😂</p>
+                            <p>This story serves as a reminder how important an accessible stay experience benefits everyone! 🌟</p>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="March contest: Autism Awareness trivia" color="lightblue-bg" textcolor="black" bordercolor="#9D4CDC" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/austismawareness.jpg"
+                        alt="A hand with many little multi-colored hands within it.  Autism Awareness"
+                        background="bg-lightblue-bg"
+                        bordercolor="#9D4CDC"
+                        width="230"
+                        height="121">
+                        <component src="p-inline-test.html" background="bg-lightblue-bg">
+                            <p>In celebration of Autism Awareness Month, we're hosting a trivia challenge! Participants who answer all 7 questions about autism correctly before April 23 will be entered into a drawing to win a tote bag of their choice from <a href="https://www.madamclutterbuckets.com/collections/madam-clutterbuckets-tote-bags?browse=%2Fcollections%2Fmadam-clutterbuckets-tote-bags&filter.v.availability=1&filter.v.price.gte=0&filter.v.price.lte=25">Madam Clutterbuckets</a>.</p>
+                            <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=0pICZtXPPUq3p-j37kWKCrea_ARpMpdNjarzGirGCk1UNlM5MDJCNk1GUVdRTTFOMjNVM05NSzU0SS4u">Play the Autism Awareness trivia</a>.</p>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="World Down Syndrome Awareness Day Contest Winners" color="lightblue-bg" textcolor="black" bordercolor="#9D4CDC" align="left"></component>
+                        <component src="feature-wrap-image-socks-winners.html"
+                        image="../images/lots-of-socks.jpg"
+                        alt="3 pairs of #LotsOfSocks"
+                        background="bg-lightblue-bg"
+                        bordercolor="#9D4CDC"
+                        width="650"
+                        height="225"
+                        >
+                        </component>
+                        <component src="h2-background.html" text="A11y Cats comic strip" color="beige-bg" bordercolor="#00B050" textcolor="black" align="left"></component>
+                        <component src="feature-wrap-image-no-image.html"
+                        background="bg-beige-bg"
+                        bordercolor="#00B050"
+                        >
+                        <component src="p-inline-test.html" background="bg-beige-bg">
+                            <p>Welcome to the whimsical world of A11y Cats! Join our curious and clever feline friends as they embark on adventures to explore the importance of accessibility and inclusivity in the digital age. Through their playful banter and insightful discoveries, these cats will show you how small changes can make a big difference for everyone. Get ready for a paws-itively delightful blend of fun and learning with the A11y Cats!</p>
+                            <div><img src="../images/a11ycats1-1.jpg" width="335" height="335" class="half-image" alt="Panel 1: Two cats sit in front of a laptop computer.  Cat 1: “Hey, do you know what ‘a11y’ means?”. Cat 2: “A new cat food?!”.
+                            ">
+                            <img src="../images/a11ycats1-2.jpg" width="335" height="335" class="half-image" alt="Panel 2: Cat 1: “It's short for ‘accessibility’! The ‘11’ represents the 11 letters between ‘a’ and ‘y.’”.
+                                "></div>
+                            
+                            <div><img src="../images/a11ycats1-3.jpg" width="335" height="335" class="half-image" alt="Panel 3: Cat 2: “Oh, like ‘i18n’ for internationalization? So, is a11y good for i18n too?”.
+                            ">
+                            <img src="../images/a11ycats1-4.jpg" width="335" height="335" class="half-image" alt="Panel 4: Cat 1: “Exactly! Both make things better for everyone – whether it’s for people with disabilities or reaching global audiences.”. Cat 2: “Purr-fect, I wanna be an a11y cat!”
+                            "></div>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="Connect with us" color="white" textcolor="black" align="left" bordercolor="#000000"></component>
+                        <component src="resources.html"></component>
+                        <component src="footer.html"></component>
+                    </table>
+                    <!-- Email Body : END -->
+                </div>
+                <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->     
+    </block>
+</extends>

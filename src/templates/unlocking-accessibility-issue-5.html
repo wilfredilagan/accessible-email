@@ -1,0 +1,143 @@
+<extends src="main.html">
+    <block name="template">
+                <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+                <!-- Preview Text Spacing Hack : BEGIN -->
+                <!--<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+                    &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+                </div> -->
+                <!-- Preview Text Spacing Hack : END -->
+        
+                <!--
+                    Set the email width. Defined in two places:
+                    1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+                    2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+                    Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+                -->
+                    <!--[if mso]>
+                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+                    <tr>
+                    <td>
+                    <![endif]-->
+                <div style="max-width: 700px; margin: 0 auto;" class="email-container" width="700">    
+                    <!-- Email Body : BEGIN -->
+                        <component src="hero.html"></component>
+                        <component src="feature-image.html"
+                        image="../images/amexgbt.jpg"
+                        alt="A wheelchair traveler navigating through an airport"
+                        width="728"
+                        height="370"
+                        ></component>
+                        <component src="feature.html" 
+                            background="bg-lightblue-bg"
+                            bordercolor="#10B79C"
+                            heading="New program supports travelers requiring special assistance">
+                            <p>In December 2023, American Express Global Business Travel (Amex GBT), the world’s leading B2B travel platform, introduced Travelers Requiring Special Assistance (TRSA) a global accessibility program for business travelers with apparent and non-apparent disabilities. The program aims to make business travel more comfortable and accessible for team members with disabilities, combining service-based solutions, advocacy, and technology.</p>
+                            <h3>Accessibility challenges</h3>
+                            <p>Accessibility is a significant obstacle for an estimated 1.3 billion people globally. Research by Amex GBT and Harvard Business Review Analytic Services shows that business travel is crucial for corporate growth, with 84% of respondents recognizing the value of in-person meetings. According to a 2022 research report from MMGY Global, a travel and tourism integrated marketing agency, lodging and transportation accessibility are the biggest barriers to travelers with mobility issues.</p>
+                            <h3>Accessibility Center of Excellence Involvement</h3>
+                            <p>In late 2023 and early 2024, Hilton's Accessibility Team and Linda Beaver, Global Travel Lead, explored a partnership with Amex GBT's TRSA program, and discussions about the program's benefits for team members with disabilities began. A focus group provided insights, leading to Hilton's decision to become an official partner.</p>
+                            <h3>Pilot Program Process</h3>
+                            <p>We are currently piloting the program with 4 team members. Following a successful completion, the TRSA program will be extended to all Hilton corporate employees with disabilities.</p>
+                            <h3>Key Highlights of the TRSA Program</h3>
+                            <p>
+                                <ul>
+                                    <li><strong>Dedicated Support</strong>: End-to-end trip stewardship by a highly trained team.</li>
+                                    <li><strong>Accessibility Solutions</strong>: Integration into booking and travel management for easier travel.</li>
+                                    <li><strong>Enhanced Services</strong>: Complimentary hotel room upgrades, TSA PreCheck facilitation, and United Airlines lounge passes.</li>
+                                    <li><strong>Personalized Assistance</strong>: Tailored support for various needs, ensuring every traveler feels valued.</li>
+                                </ul>
+                            </p>
+                            <p>This partnership sets a new standard in the business travel industry and demonstrates both Amex GBT's and Hilton's commitment to delivering distinguished service, making business travel more comfortable, confident, easy, and inclusive.</p>
+                        </component>
+                        <component src="h2-background.html" text="Making your documents accessible in Microsoft Office" color="beige-bg" bordercolor="#002F61" textcolor="black" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/accessibilitychecker.png"
+                        alt="A new email window in Outlook with the review tab and check accessibility button highlighted"
+                        background="bg-beige-bg"
+                        bordercolor="#002F61"
+                        width="300"
+                        height="170">
+                        <component src="p-inline-test.html" background="bg-beige-bg">
+                            <p>Everyone has resolutions in the New Year, so this year, let’s resolve to make our documents more user-friendly for all! The Microsoft Office 365 Accessibility Checker can help. Think of it as your trusty sidekick, always ready to help you make documents (PowerPoint, Word, Excel, Outlook, and OneNote) friendly and accessible to everyone.</p>
+                            <p>To use this helpful tool, open your document and head to the <strong>Review</strong> tab. Select <strong>Check Accessibility</strong>, and voilà! The Accessibility Checker will scan your document and present a list of issues and suggestions in the Accessibility pane. Each issue comes with a clear explanation and tips on how to fix it, making it easy to improve your document's accessibility.</p>
+                            <p>Why is this important? Ensuring your documents are accessible means everyone, including people with disabilities, can read and interact with your content. It's all about creating an inclusive environment where everyone can participate and benefit. Give it a try! You will be surprised to learn how easy it is. Visit our Accessibility Center of Excellence SharePoint site for additional tips to make <a href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/Accessible-Word-Documents.aspx">Word files accessible</a> and <a href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/Accessible-PowerPoints.aspx">PowerPoints accessible</a>.</p>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="January’s contest: Mr. Maple guide dog trivia" color="lightblue-bg" textcolor="black" bordercolor="#9D4CDC" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/contest-issue5.png"
+                        alt="a plush version of Mr. Maple the guide dog"
+                        background="bg-lightblue-bg"
+                        bordercolor="#9D4CDC"
+                        width="150"
+                        height="200">
+                        <component src="p-inline-test.html" background="bg-lightblue-bg">
+                            <p>Test your guide dog knowledge. This month's contest is dedicated to Matthew and Paul Castle, along with Paul Castle’s guide dog, Mr. Maple. Their support for our <a href="https://www.instagram.com/matthewandpaul/reel/DCPT3qMyNsV/">Be My Eyes partnership</a> has been invaluable. The winner will receive the adorable Mr. Maple Bundle from their online store, <a href="https://paulcastlestudio.com/">Paul Castle Studio</a>, where Paul creates art using adaptive tools after losing 95% of his vision to retinitis pigmentosa. .</p>
+                            <p><strong>Instructions</strong>: There are 8 multiple choice questions. Select the correct answer for all eight, and be entered in a drawing to win the Mr. Maple Bundle. Submit your answers before February 18 to be considered for the prize. The winner will be announced in the next newsletter.</p>
+                            <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=0pICZtXPPUq3p-j37kWKCrea_ARpMpdNjarzGirGCk1UNVlGSjdPSkwxNFRPMDQxTU04VklKM1VUSi4u">Play Mr. Maple Guide Dog Trivia</a></p>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="December’s contest winner: Persona Pair-up" color="lightblue-bg" textcolor="black" bordercolor="#9D4CDC" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/Jen-winner.jpg"
+                        alt="Jennifer Edwards"
+                        background="bg-lightblue-bg"
+                        bordercolor="#9D4CDC"
+                        width="100"
+                        height="100">
+                        <component src="p-inline-test.html" background="bg-lightblue-bg">
+                            <p>Big shout-out to Jennifer Edwards in Revenue Management Operations for winning last month's Persona Pair-up: Match and Win contest! Your $25 Starbucks gift card is on the way!</p>
+                            <h3>Answers for Persona Pair-up: Match and Win!</h3>
+                            <p><strong>Millie Neal (deaf)</strong></p>
+                            <ul>
+                                <li>1. "I really hope the meeting I'm attending has a sign language interpreter. It would make such a difference for me."</li>
+                                <li>5. "I rely on the chat messenger to communicate with the front desk since I can't speak directly to them."</li>
+                                <li>10. "A flashing doorbell helps me know when someone is at my door, which is very important for me."</li>
+                            </ul>
+                            <p><strong>Ann & Bill Lawler (low vision, arthritis)</strong></p>
+                            <ul>
+                                <li>2. "Reading text that's too light is a challenge. I need to be able to make it bigger to see it clearly."</li>
+                                <li>4. "Large buttons are much easier for me to use."</li>
+                                <li>11. "Grab bars in the shower provide the stability I need."</li>
+                            </ul>
+                            <p><strong>Olive Kidman (blind)</strong></p>
+                            <ul>
+                                <li>3. "Using Be My Eyes to locate the shampoo in my room was incredibly helpful."</li>
+                                <li>7. "Finding my room is easier thanks to the braille in the elevator and on the room numbers."</li>
+                                <li>12. "I appreciate the friendly staff who assist me with breakfast each morning."</li>
+                            </ul>
+                            <p><strong>Avery Hardworker (ADHD)</strong></p>
+                            <ul>
+                                <li>6. "I truly appreciate having a quiet room at the hotel when I feel overstimulated."</li>
+                                <li>8. "Talking to people can cause me anxiety, so I’m happy this hotel has digital check-in."</li>
+                                <li>9. "Clear, step-by-step instructions are essential for me when booking a room."</li>
+                            </ul>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="Coming up: the CSUN Assistive Technology Conference" color="beige-bg" bordercolor="#00B050" textcolor="black" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/csun-group.jpeg"
+                        alt="The A11y team and others at CSUN 2024"
+                        background="bg-beige-bg"
+                        bordercolor="#00B050"
+                        width="300"
+                        height="170">
+                        <component src="p-inline-test.html" background="bg-beige-bg">
+                            <p>The Accessibility team will be representing Hilton and presenting at the 40th CSUN Assistive Technology Conference in Anaheim, California on March 10–14, 2025. It’s the world’s largest forum for highlighting cutting-edge technology and practical solutions that remove barriers so people with disabilities can fully participate in society, the workplace, and educational settings.</p>
+                            <p>This year, 5 members from our Accessibility and Digital Marketing teams will be showcasing our best-in-class accessible video player! Nicole Bergstrom, Zane McHattie, Adam Page, Leo Kapusta, and Megan Lilly will share their insights during <strong>‘Creating Accessible Video Content: A Ripple Effect.’</strong></p>
+                            <p>To learn more about the conference, visit <a href="https://web.cvent.com/event/2c5d8c51-6441-44c0-b361-131ff9544dd5/summary">CSUN’s site</a> or email us at <a href="mailto:digital.accessibility@hilton.com">digital.accessibility@hilton.com</a>.</p>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="Connect with us" color="white" textcolor="black" align="left" bordercolor="#000000"></component>
+                        <component src="resources.html"></component>
+                        <component src="footer.html"></component>
+                    </table>
+                    <!-- Email Body : END -->
+                </div>
+                <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->     
+    </block>
+</extends>

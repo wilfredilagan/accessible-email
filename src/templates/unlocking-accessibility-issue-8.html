@@ -1,0 +1,137 @@
+<extends src="main.html">
+    <block name="template">
+                <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+                <!-- Preview Text Spacing Hack : BEGIN -->
+                <!--<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+                    &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+                </div> -->
+                <!-- Preview Text Spacing Hack : END -->
+        
+                <!--
+                    Set the email width. Defined in two places:
+                    1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+                    2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+                    Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+                -->
+                    <!--[if mso]>
+                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+                    <tr>
+                    <td>
+                    <![endif]-->
+                <div style="max-width: 700px; margin: 0 auto;" class="email-container" width="700">    
+                    <!-- Email Body : BEGIN -->
+                        <component src="hero.html"></component>
+                        <component src="feature-image.html"
+                        image="../images/GAAD-Banner.png"
+                        alt="GAAD Logo. Global Accessibility Awareness Day: Accessibility Across Pixels and Places.  Brought to you by Digital Accessibility and Hilton"
+                        width="728"
+                        height="201"
+                        ></component>
+                        <component src="feature.html" 
+                            background="bg-lightblue-bg"
+                            bordercolor="#06B096"
+                            heading="Global Accessibility Awareness Day 2025: Accessibility across pixels and places">
+                            <p>Join us May 13–15 for our 6th annual Global Accessibility Awareness Day (GAAD), highlighting Hilton’s dedication to accessibility and inclusion across digital and physical spaces.  <a href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/GAAD-2025-Virtual-Sessions.aspx">Virtual</a> and <a href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/GAAD-2025.aspx#in-office-events">in-office</a> are planned along with  demonstrations of our <a href="https://events.teams.microsoft.com/event/bbf2743b-86d2-4a46-9d52-f28682a4bcf9%40660292d2-cfd5-4a3d-b7a7-e8f7ee458a0a">accessible video player</a> (created in-house) and a fun game of <a href="https://events.teams.microsoft.com/event/f7da4b48-2804-4bc3-babd-bd982b48cb99%40660292d2-cfd5-4a3d-b7a7-e8f7ee458a0a">Accessible Jeopardy!</a>  In-office events include workshops hosted by Lyra addressing mental health and wellness, plus ‘lunch and learn’ sessions.</p>
+                            <p>Be sure to stop by one of our in-office events and/or tune in to a virtual webinar for a chance to win one of eight <strong>Be My Guest Certificates!</strong></p>
+                            <p>GAAD is a perfect opportunity to learn, share, and celebrate how we are advancing accessibility initiatives across Hilton, ensuring that all guests and team members can engage with our products and services, regardless of their abilities.</p>
+                            <p>This event is sponsored by the Accessibility Team, organized in collaboration with the Abilities TMRG.</p>
+                        </component>
+                        <component src="h2-background.html" text="GrackleDocs partnership: Your solution for accessible PDFs" color="beige-bg" bordercolor="#002F61" textcolor="black" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/gracklego.png"
+                        alt="Grackle go logo"
+                        background="bg-beige-bg"
+                        bordercolor="#002F61"
+                        width="200"
+                        height="135">
+                        <component src="p-inline-test.html" background="bg-beige-bg">
+                            <p><a href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/PDF-Remediation-Process.aspx">Accessible PDFs</a> ensure everyone, including people with disabilities, can read and interact with digital documents. PDFs are such a common digital format that there is an International Organization for Standardization (ISO) standard <a href="https://pdfa.org/resource/iso-14289-pdfua/">(ISO 14289-1)</a> for PDF accessibility. Conforming with accessible standards is crucial, and GrackleDocs makes it easy.</p>
+                            <p>Our partnership with <a href="https://www.grackledocs.com/en/">GrackleDocs</a> allows anyone at Hilton to submit a PDF  for accessibility compliance testing and remediation, for <a href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/PDF-Remediation-Process.aspx#pricing">a modest cost</a> invoiced directly to their cost center.  To take advantage of this service, upload your document to Grackle’s free analysis service to receive a letter grade. If the document receives less than an ‘A,’ Grackle’s remediation service can fix any issues and return the document, along with proof of accessibility compliance, making it ready for posting to the web or sharing more broadly. This service ensures compliance and broadens the reach of your documents.</p>
+                            <h3>Why accessible PDFs matter</h3>
+                            <ul>
+                                <li><strong>Improved user experience: </strong>Web pages are the best and most accessible place to publish content, but we understand that PDFs are sometimes necessary. When you must publish a PDF, please take care to make it accessible.</li>
+                                <li><strong>Legal compliance: </strong>They meet requirements like the Americans with Disabilities Act (ADA), Section 508, and the soon-enforced European Accessibility Act (EAA).</li>
+                                <li><strong>Broader reach: </strong>Accessible documents can be read by a wider audience, including those using assistive technologies.</li>
+                            </ul>
+                            <h3>GrackleDocs features</h3>
+                            <ul>
+                                <li><strong>Automated accessibility checks: </strong>Quickly identify and fix issues.</li>
+                                <li><strong>User-friendly interface: </strong>Easy to use, even for non-experts.</li>
+                            </ul>
+                            <p>Creating accessible documents from the beginning can reduce the need for remediation, but GrackleDocs is a reliable backup. Embrace the future of accessibility and ensure your documents are inclusive for all. <a href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/PDF-Remediation-Process.aspx">Get started with GrackleDocs today.</a> Questions? Contact, digital.accessibility@hilton.com.</p>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="April’s contest: GAAD trivia" color="lightblue-bg" textcolor="black" bordercolor="#007293" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/GAAD-contest-hat.jpg"
+                        alt="A woman wearing a grey hat with braile stiched in that reads the color of the hat"
+                        background="bg-lightblue-bg"
+                        bordercolor="#007293"
+                        width="200"
+                        height="200">
+                        <component src="p-inline-test.html" background="bg-lightblue-bg">
+                            <p>You'll be GAAD you participated in this month's Unlocking Accessibility contest! Answer four questions about GAAD for a chance to win a <a href="https://twoblindbrothers.com/collections/gifts/products/2bb-baseball-cap-draft-colors?variant=39337244229728">sporty baseball cap</a> from the online store Two Blind Brothers, run by siblings who lost their vision at a young age and made it their mission to cure blindness. 100% of their profits go to their cause. The cap features the hat color written in Braille, and winners can choose from three color options. Submissions must be in by May 23.</p>
+                            <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=0pICZtXPPUq3p-j37kWKCrea_ARpMpdNjarzGirGCk1UMjAwWjZUOFdJSEtCTTZSRTRUSkhMTU5XMy4u">Play GAAD Trivia</a></p>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="March contest winner: Autism Awareness trivia" color="lightblue-bg" textcolor="black" bordercolor="#007293" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/march-winner.png"
+                        alt="Headshot of Aruna Sri Neppalli in a floral top with long dark hair."
+                        background="bg-lightblue-bg"
+                        bordercolor="#007293"
+                        width="200"
+                        height="210">
+                        <component src="p-inline-test.html" background="bg-lightblue-bg">
+                            <p>Congratulations to last month’s contest winner, Aruna Sri Neppalli, a Sr Quality Engineer SDET on the Quality Engineering team. We hope you find all of the things to fill that new tote bag!</p>
+                            <h3>Autism Awareness trivia answers</h3>
+                            <ol>
+                                <li><p>What does the acronym ASD stand for?<br><strong>Answer</strong>: Autism Spectrum Disorder</p></li>
+                                <li><p>ASD is nearly 4 times more common among boys than among girls.<br><strong>Answer</strong>: True</p></li>
+                                <li><p>When is Autism Awareness Day?<br><strong>Answer</strong>: April 2</p></li>
+                                <li><p>What is the most recognized symbol that represents autism?<br><strong>Answer</strong>: A puzzle piece</p></li>
+                                <li><p>What year did Autism Awareness Month start?<br><strong>Answer</strong>: 1970</p></li>
+                            </ol>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="Making meetings inclusive" color="beige-bg" bordercolor="#6BB030" textcolor="black" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/accessible-meetings.jpg"
+                        alt="A cup of coffee and a computer showing a teams meeting"
+                        background="bg-beige-bg"
+                        bordercolor="#6BB030"
+                        width="200"
+                        height="150">
+                        <component src="p-inline-test.html" background="bg-beige-bg">
+                            <p> Inclusive meetings are the secret sauce to a thriving, diverse workplace. They ensure that every voice, opinion, and idea is heard, creating a safe space where everyone feels comfortable and empowered to speak up – not just a select few. And guess what? Diverse companies consistently outperform their less diverse counterparts.</p>
+                            <p>In advance of GAAD next month, we're excited to share how we're making each virtual presentation inclusive:</p>
+                            <h3>GAAD preparations:</h3>
+                            <ul>
+                                <li><strong>Describe content: </strong>Presenters will verbally describe images, charts, and graphs in their slide decks. This helps everyone, especially those using screen readers, follow along.</li>
+                                <li><strong>Recording, transcription and captioning: </strong>Presenters will describe where to find the live captioning feature, ensuring everyone can participate fully. All sessions will also be recorded and transcribed so everyone can access all the content after the session.</li>
+                                <li><strong>Accessible slide decks: </strong>We provide accessible slide decks during and after the event.</li>
+                                <li><strong>PowerPoint live: </strong>We’ll be using the PowerPoint Live feature within Microsoft Teams to share slide decks so screen reader users can also access the content on the slides. It's a game-changer for accessibility!</li>
+                            </ul>
+                            <h3>Other tips for inclusive meetings:</h3>
+                            <ul>
+                                <li><strong>Meeting invites: </strong>Include dial-in information and Microsoft Teams links in the body of your meeting invite, not just in the location field. This makes it easier for everyone to join.</li>
+                                <li><strong>Advance copies: </strong>If possible, provide presentation materials to all participants before the meeting.</li>
+                                <li><strong>Allow time: </strong>Some people take longer to express their ideas. Allow time for everyone to respond at their own speed.</li>
+                                <li><strong>Agenda and handouts:  </strong>Briefly describe the agenda and handout materials. This helps everyone stay on track.</li>
+                            </ul>
+                            <p>For more information about inclusive meetings, visit our Accessibility Center of Excellence SharePoint page on <a href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/Accessible-Virtual-Meetings.aspx">accessible virtual meetings</a>.  Let's make all our meetings accessible for everyone, using GAAD as our shining example. Together, we can create a more inclusive and diverse workplace! 🎉</p>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="Connect with us" color="white" textcolor="black" align="left" bordercolor="#000000"></component>
+                        <component src="resources.html"></component>
+                        <component src="footer.html"></component>
+                    </table>
+                    <!-- Email Body : END -->
+                </div>
+                <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->     
+    </block>
+</extends>

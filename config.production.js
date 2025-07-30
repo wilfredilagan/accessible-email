@@ -9,10 +9,42 @@
 |
 */
 const fs = require('node:fs');
+var request = require('request');
 
 module.exports = {
+  events:{
+    afterTransformers(html, orgConfig){
+      let content = html
+      let config = {
+        url: 'https://api.docraptor.com/docs',
+        encoding: null, //IMPORTANT! This produces a binary body response instead of text
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        json: {
+          user_credentials: "Ll1tdzCraKVOKHE0GcNh",
+          doc: {
+            document_content: content,
+            type: "pdf",
+            test: true,
+            prince_options: {
+               media:   "screen",          // use screen styles instead of print styles
+            //   baseurl: "http://hello.com" // URL to use for generating absolute URLs for assets from relative URLs
+            }
+          }
+        }
+      };
+      request.post(config, function(err, response, body) {
+        fs.writeFile('doc_raptor_sample.pdf', body, "binary", function(writeErr) {
+          console.log('Saved!');
+        });
+      });
+      return html
+    }
+  },
   build: {
     templates: {
+      source: 'src/templates/',
       destination: {
         path: 'build_production',
       },
@@ -34,9 +66,13 @@ module.exports = {
             if (node.tag === 'img' && node.attrs?.src) {
               const imgsrcpath = node.attrs.src.replace('../','src/')
               const img = fs.readFileSync(imgsrcpath);
-
               let base64string = Buffer.from(img).toString('base64')
-              node.attrs.src = `data:image/png;base64,` + base64string
+              let fileExt = imgsrcpath.split('.').pop()
+              if (fileExt == 'png'){
+                node.attrs.src = `data:image/png;base64,` + base64string
+              } else if(fileExt=='jpg' || fileExt =='jpeg'){
+                node.attrs.src = `data:image/jpeg;base64,` + base64string
+              }
             }
 
             return node
@@ -45,7 +81,6 @@ module.exports = {
           return tree.walk(process)
         })()
       ]
-    }
+    },
   },
-  inlineCSS: true
 }

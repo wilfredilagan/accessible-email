@@ -1,0 +1,181 @@
+<extends src="main.html">
+    <block name="template">
+                <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+                <!-- Preview Text Spacing Hack : BEGIN -->
+                <!--<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+                    &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+                </div> -->
+                <!-- Preview Text Spacing Hack : END -->
+        
+                <!--
+                    Set the email width. Defined in two places:
+                    1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+                    2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+                    Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+                -->
+                    <!--[if mso]>
+                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+                    <tr>
+                    <td>
+                    <![endif]-->
+                <div style="max-width: 700px; margin: 0 auto;" class="email-container" width="700">    
+                    <!-- Email Body : BEGIN -->
+                        <component src="hero.html"></component>
+                        <component src="feature-image.html"
+                        image="../images/issue-9-connected-room.png"
+                        alt="Hilton Connected Room Tv App home screen.  There is a main menu at the top followed by a spotlight section, a popular section and at the bottom is a rooms control section."
+                        width="728"
+                        height="400"
+                        ></component>
+                        <component src="h2-background.html" text="Hilton's accessible Connected Room TV" color="lightblue-bg" textcolor="black" bordercolor="#06B096" align="left"></component>
+                        <component src="feature-wrap-image.html" 
+                            background="bg-lightblue-bg"
+                            bordercolor="#06B096"
+                            image="../images/issue-9-connected-room-remote.png"
+                            alt="Physical Connected Room Tv Remote with the new screen reader on & off button"
+                            width="160"
+                            height="220">
+                            <p>Hilton's Connected Room initiative is revolutionizing guest experiences by integrating accessibility features. The Smart TV, powered by the Android Open-Source Project, offers personalized greetings, spotlights of hotel amenities, and streaming entertainment options including live TV and popular apps. These features enhance the overall guest experience, making it more interactive and tailored to individual preferences.</p>
+                            <p>A significant focus of Connected Room is on accessibility, ensuring that all guests, including those with visual and hearing impairments, can fully enjoy their stay. The TV remote control includes tactile bumps, a closed caption button, and screen reader button to aid navigation. Additionally, the Hilton Honors app serves as a virtual remote control, offering voiceover and talkback support, which allows guests to control the TV from their mobile devices. These features are complemented by customizable closed caption options, providing a seamless and inclusive experience.</p>
+                            <p>Hilton continues to innovate with upcoming enhancements such as Direct Connect, which allows guests to connect personal devices via HDMI, and digital directories for easy access to information on dining and area attractions. The initiative is supported by the leadership of Lee Hunt and Kimberly Key and the hard work of Courtney Downs and the rest of the development and QA teams. Hilton's commitment to accessibility and technology ensures that all guests can enjoy a personalized and comfortable stay, setting a new standard in the hospitality industry.</p>
+                        </component>
+                        <component src="h2-background.html" text="Picture this: AI-powered image exploration with JAWS" color="beige-bg" bordercolor="#002F61" textcolor="black" align="left"></component>
+                        <component src="feature-wrap.html"
+                        background="bg-beige-bg"
+                        bordercolor="#002F61"
+                        >
+                        <component src="p-inline-test.html" background="bg-beige-bg">
+                            <p>Picture Smart is a powerful new feature in JAWS 2024 – a Windows-based third-party screen reader– that blends artificial intelligence with accessibility, giving screen reader users a deeper way to explore images. But before we dive in, let’s be clear: <strong>AI is a supplement to, not a substitute for, alt text.</strong></p>
+                            <p>Alt text is foundational for accessibility. It gives users who are blind or visually impaired a quick, meaningful summary of what an image is about. It’s required by the Web Content Accessibility Guidelines (WCAG) and helps ensure digital content is inclusive. But alt text was never meant to describe every detail. It’s designed to provide just enough context to understand the image’s purpose.</p>
+                            <p>That’s where Picture Smart comes in.</p>
+                            <p>Traditionally, screen readers like JAWS could read text, links, buttons, and form elements, but images were a challenge. Alt text helped bridge that gap, but it was limited. Now, Picture Smart – powered by AI models like OpenAI’s ChatGPT and Anthropic’s Claude –analyzes photos and provides detailed descriptions. Even better, it allows users to ask follow-up questions about what’s in the image.</p>
+                        </component>
+                        </component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/issue-9-picture-smart.jpg"
+                        alt="The Shop"
+                        background="bg-beige-bg"
+                        bordercolor="#002F61"
+                        width="300"
+                        height="197">
+                        <component src="p-inline-test.html" background="bg-beige-bg">
+                            <h3>A real-world example</h3>
+                            <p>While browsing hotels in Billings, Montana, I came across a photo labeled simply ‘Snack Shop.’</p>
+                            <p>That alt text caught my attention, but I wanted to know more – like whether they had chocolate. Here’s what Picture Smart told me:</p>
+                            <p><strong><em>“The image shows a small, modern convenience store labeled ‘The Shop.’ It features a variety of snacks and beverages displayed on shelves and in refrigerators. The setup includes baskets of fruit and snacks on a central counter, with drinks stacked on lower shelves. The floor is wooden, and the area is well-lit, giving it a clean and inviting appearance. The shop also has a microwave and other supplies on shelves in the background.”</em></strong></p>
+                            <p>Great. They have fruit, but my eating habits change radically when I travel, so I asked Picture Smart specifically about chocolate.</p>
+                            <p><strong><em>"Yes, the image includes several snacks that likely contain chocolate, such as candy bars on the shelves."</em></strong></p>
+                            <p>It also confirmed the presence of Diet Coke – the perfect beverage for chocolate snacks. But what’s in the gym? I seriously need it after all these snacks.</p>
+                        </component>
+                        </component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/issue-9-picture-smart-gym.jpg"
+                        alt="Fitness Center"
+                        background="bg-beige-bg"
+                        bordercolor="#002F61"
+                        width="300"
+                        height="201">
+                        <component src="p-inline-test.html" background="bg-beige-bg">
+                            <p><strong><em>“The image shows a small gym room with several pieces of fitness equipment. On the left, there are treadmills. Along the back wall, there are racks with dumbbells and medicine balls. Two benches are positioned near the dumbbells. A flat-screen TV is mounted on the wall above the equipment.”</em></strong></p>
+                            <p>Picture Smart is informative well beyond the snack shop and gym. It can reveal hotel décor, furniture colors, or artwork – details that help a blind potential guest know the ‘vibe’ of the place.</p>
+                            <h3>Why alt text still matters</h3>
+                            <p>Picture Smart is powerful, but it’s not automatic. You must launch it manually, and it takes a few seconds to process. That’s why alt text is still essential. It gives users a quick summary to decide whether they want to explore further.</p>
+                            <p>Think of it this way:</p>
+                            <ul>
+                                <li>Alt text is your headline.</li>
+                                <li>Picture Smart is the deep dive.</li>
+                            </ul>
+                            <p>Together, they create a richer, more inclusive experience.</p>
+                            <p>So when writing alt text, keep it clear and helpful. And if you’re a JAWS user, Picture Smart is your new tool for unlocking the visual world, one image at a time.</p>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="June contest: What does the JAWS say?" color="lightblue-bg" textcolor="black" bordercolor="#007293" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/issue-9-contest.png"
+                        alt="It's the image of the guy that made the 'What does the fox say', song. He's in full fox gear with the fox hat and body suit. Caption reads, 'What does the JAWS say'."
+                        background="bg-lightblue-bg"
+                        bordercolor="#007293"
+                        width="300"
+                        height="200">
+                        <component src="p-inline-test.html" background="bg-lightblue-bg">
+                            <p>Not unlike a fox, screen readers can be tricky to understand if you're not a regular user. Many people who use tools like JAWS or VoiceOver set the speech rate high to quickly process content that sighted users could just skim over. In this contest, you’ll hear three audio clips – one per question – and every correct answer earns an entry; submit your answers by June 26 for a chance to win a shirt from the <a href="https://scottvinkle.com/collections/t-shirts">online store of Scott Vinkle</a>, an educator in accessibility for design and development.</p>
+                            <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=0pICZtXPPUq3p-j37kWKCrea_ARpMpdNjarzGirGCk1UN0ZUNk1PN1BZU0tIOTVJNlpSODBMR00wSi4u">Play What does the JAWS say trivia</a></p>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="March contest winner: Autism Awareness trivia" color="lightblue-bg" textcolor="black" bordercolor="#007293" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/issue-9-contest-winner.jpg"
+                        alt="Profile picture of Hailley Tarrant. She's wearing a horizontally striped, shirt that's red and beige."
+                        background="bg-lightblue-bg"
+                        bordercolor="#007293"
+                        width="200"
+                        height="210">
+                        <component src="p-inline-test.html" background="bg-lightblue-bg">
+                            <p>Congratulations to Hailley Tarrant, Senior Analyst on the Digital Experience Analytics Team, for winning last month’s contest! We hope you’ll have a little more fun in the sun with that sweet ballcap!</p>
+                            <h3>May contest answers: GAAD trivia: A touch of accessibility</h3>
+                            <ol>
+                                <li><p>What are some of the goals of Global Accessibility Awareness Day (GAAD)?<br><strong>Answer</strong>: b.	Acknowledge the current state of digital accessibility. & c. Spread awareness about accessibility and the barriers people with disabilities face.</p></li>
+                                <li><p>True or False: GAAD is a club limited to people with disabilities and those directly supporting accessibility efforts.<br><strong>Answer</strong>: False</p></li>
+                                <li><p>What day is GAAD held on?<br><strong>Answer</strong>: Third Thursday of May</p></li>
+                                <li><p>What is the vision of the GAAD Foundation?<br><strong>Answer</strong>: For accessibility to be built into the product development lifecycle for technology and digital products</p></li>
+                                <li><p>Bonus question to earn an additional entry to the drawing: Who was the signature event speaker for the 5th annual GAAD, at Hilton?<br><strong>Answer</strong>: Joe Devon</p></li>
+                            </ol>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="Hilton celebrates GAAD 2025: A global commitment to accessibility" color="beige-bg" bordercolor="#6BB030" textcolor="black" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/issue-9-GAAD-recap.jpg"
+                        alt="A collage of team members from in-office GAAD events"
+                        background="bg-beige-bg"
+                        bordercolor="#6BB030"
+                        width="300"
+                        height="451">
+                        <component src="p-inline-test.html" background="bg-beige-bg">
+                            <p>From May 13–15, Hilton proudly celebrated Global Accessibility Awareness Days (GAAD) under the theme ‘Accessibility across pixels and places,’ where we showcased our unwavering commitment to inclusion, with participation from team members across the globe.</p>
+                            <p>The celebration featured 11 virtual events, offering diverse sessions that highlighted our dedication to accessibility. These included workshops, panel discussions, and interactive activities that engaged team members from various locations, fostering a sense of global unity. We had 531 attendees for the virtual events – averaging 50 attendees per session, which is a whopping 43% increase from last year. Our signature event had a record 130 registrants!</p>
+                            <p>In addition, several events took place across our corporate offices worldwide. In Glasgow, McLean, Memphis, and Dallas, hands-on activities simulated various disabilities, offering powerful insights into the daily experiences of individuals. Meanwhile, the Watford office hosted a panel on digital accessibility and provided one-on-one support sessions. In Singapore, the ‘Silent Social’ allowed team members to order coffee using sign language or written notes, fostering empathy for those with hearing and speech impairments. In Dubai, Gilani Mobility showcased assistive equipment, while a panel explored the intersection of mental health and accessibility.</p>
+                            <p>For the first time, Hilton hotels also participated in the celebration. In Trivandrum and Bengaluru, teams shared stories of inclusion and visited local care homes. In Seoul, interactive games like lip-reading and typing while blindfolded helped team members understand communication challenges. Conrad Pune highlighted Indian Sign Language, and Hilton Zhuzhou led discussions on digital tools like screen readers and live captions.</p>
+                            <p>To revisit these impactful moments, visit the <a href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/GAAD-2025.aspx">Accessibility Center of Excellence SharePoint</a> for recordings and transcripts from the virtual events, and photos from the in-person activities.</p>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="GAAD winners!" color="beige-bg" bordercolor="#6BB030" textcolor="black" align="left"></component>
+                        <component src="feature-wrap.html"
+                        background="bg-beige-bg"
+                        bordercolor="#6BB030"
+                        >
+                        <component src="p-inline-test.html" background="bg-beige-bg">
+                            <p>Thank you to all team members who participated in GAAD 2025. It is with great enthusiasm and excitement that we announce the 10 winners of our GAAD prizes!</p>
+                            <p><strong>Two round trip United Airline tickets*:</strong></p>
+                            <ul>
+                                <li>Meghan Grip</li>
+                                <li>John Bellio</li>
+                                <li>Kay Adams</li>
+                                <li>Yolanda Crumpton-West</li>
+                            </ul>
+                            <p>*Airline tickets generously donated by HSM Global Travel and United Airlines</p>
+                            <p><strong>Be My Guest Certificate:</strong></p>
+                            <ul>
+                                <li>Allissa Quick</li>
+                                <li>Esther Chau</li>
+                                <li>Brandy Carter</li>
+                                <li>Maria Vasilenko</li>
+                                <li>Tiffany Hua</li>
+                                <li>Emma Chillingworth</li>
+                                <li>Susan Lee</li>
+                                <li>Sarah McNiven</li>
+                            </ul>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="Connect with us" color="white" textcolor="black" align="left" bordercolor="#000000"></component>
+                        <component src="resources.html"></component>
+                        <component src="footer.html"></component>
+                    </table>
+                    <!-- Email Body : END -->
+                </div>
+                <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->     
+    </block>
+</extends>

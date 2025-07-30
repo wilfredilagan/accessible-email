@@ -8,7 +8,7 @@
       <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
       <meta name="color-scheme" content="light">
       <meta name="supported-color-schemes" content="light">
-      <title>Hospitable Hilton: Issue #2 - April/May Edition</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+      <title>Unlocking Accessibility: Issue 10</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
   
       <!--[if (gte mso 9)|(IE)]>
         <style type="text/css">
@@ -88,7 +88,7 @@
               mso-table-lspace: 0pt !important;
               mso-table-rspace: 0pt !important;
           }
-  
+
           /* What it does: Fixes webkit padding issue. */
           table {
               border-spacing: 0 !important;
@@ -105,6 +105,7 @@
           /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
           a {
               text-decoration: none;
+              color: #0000EE;
           }
   
           /* What it does: A work-around for email clients meddling in triggered links. */
@@ -135,7 +136,47 @@
           img.g-img + div {
               display: none !important;
           }
-  
+          
+          p {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%; 
+            font-family: loews-bold, arial, sans-serif; 
+            font-size: 14px; 
+            line-height: 18px;
+          }
+
+          ol > li {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%; 
+            font-family: loews-bold, arial, sans-serif !important; 
+            font-size: 14px !important; 
+            line-height: 18px !important;
+          }
+
+          ul > li {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%; 
+            font-family: loews-bold, arial, sans-serif !important; 
+            font-size: 14px !important; 
+            line-height: 18px !important;
+          }
+
+          h3 {
+            -ms-text-size-adjust: 100%; 
+            -webkit-text-size-adjust: 100%; 
+            margin-top: 10px; 
+            margin-bottom: 10px
+          }
+
+          a {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            text-decoration: underline;
+            color: #0000EE;
+            text-decoration-line: underline
+          }
+
+
           /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
           /* Create one of these media queries for each additional viewport size you'd like to fix */
   
@@ -174,9 +215,26 @@
             background: #404040 !important;
             border-color: #404040 !important;
         }
-  
+        
+        .mobile-table {
+            mso-hide:all;
+        }
+
         /* Media Queries */
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 714px) {
+
+            .feature-image {
+                width: 100%;
+                height: 100%;
+            }
+
+            .article-image {
+                display:block !important;
+                float:none !important;
+                margin: 0 auto 25px auto!important;
+            }
+
+
 
             /* What it does: Forces table cells into full-width rows. */
             .stack-column,
@@ -185,9 +243,10 @@
                 width: 100% !important;
                 max-width: 100% !important;
                 direction: ltr !important;
+                text-align: center !important;
             }
             /* And center justify these ones. */
-            .stack-column-center {
+            .stack-column-center, .column-image {
                 text-align: center !important;
             }
   
@@ -210,11 +269,60 @@
 
             .listitem-link {
                 padding-bottom: 8px;
+            } 
+
+            span {
+                -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%; 
+            font-family: loews-bold, arial, sans-serif !important; 
+            font-size: 17px !important; 
+            line-height: 18px !important;    
             }
-            
+
+            ol > li {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%; 
+            font-family: loews-bold, arial, sans-serif !important; 
+            font-size: 17px !important; 
+            line-height: 18px !important;
+            }
+
+            ul > li {
+                -ms-text-size-adjust: 100%;
+                -webkit-text-size-adjust: 100%; 
+                font-family: loews-bold, arial, sans-serif !important; 
+                font-size: 17px !important; 
+                line-height: 18px !important;
+            }
+
+            .mobile-table {
+                display: block !important;
+                mso-hide:none !important;
+            }
+
+            .half-image{
+            width: 335px;
+            display:block;
+                float:none;
+                margin: 0 auto 25px auto;
+            }
         }
-  
+
+        
       </style>
+<style> 
+    .keep-blue { 
+    mso-style-textfill-type:gradient; 
+    mso-style-textfill-fill-gradientfill-stoplist:"0 \#B1D7FF -1 100000\,100000 \#B1D7FF -1 100000"; 
+    color:#0F4C97 !important; 
+    }
+
+    .keep-white { 
+    mso-style-textfill-type:gradient; 
+    mso-style-textfill-fill-gradientfill-stoplist:"0 \#FFFFFF 0 100000\,100000 \#FFFFFF 0 100000"; 
+    color:#000000 !important; 
+    }
+</style>
         <!--[if (gte mso 9)|(IE)]>
             <style type="text/css">
                 .largebutton li {
@@ -232,15 +340,117 @@
       <block name="head"></block>
   </head>
 </head>
-<body class="m-0 p-0 w-full [word-break:break-word] [-webkit-font-smoothing:antialiased] {{ page.bodyClass || '' }} bg-background">
-  <if condition="page.preheader">
-    <div class="hidden">
-      {{{ page.preheader }}}
-      <each loop="item in Array.from(Array(150))">&#847; </each>
-    </div>
-  </if>
-  <div role="article" lang="{{ page.language || 'en' }}">
+<body class="m-0 p-0 w-full [word-break:break-word] [-webkit-font-smoothing:antialiased] {{ page.bodyClass || '' }} bg-background body">
+    <style>
+        @media screen and (min-width: 600px) {
+            #mobile-table {
+                display: none;
+                font-size: 0;
+                max-height: 0;
+                line-height: 0;
+                padding: 0;
+            }
+
+            .mobile-td {
+            display:none;
+            }
+
+            .half-image{
+                display: inline;
+                width: 49%;
+                height: 49%;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            [owa] .desktop-table,
+            .desktop-table {
+                display: none !important;
+                mso-hide: all;
+            }
+
+
+.feature-image {
+    width: 100%;
+    height: 100%;
+}
+
+
+.article-image {
+    display:block !important;
+    float:none !important;
+    margin: 0 auto 25px auto!important;
+}
+
+
+/* What it does: Forces table cells into full-width rows. */
+.stack-column,
+.stack-column-center {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    direction: ltr !important;
+    text-align: center !important;
+}
+/* And center justify these ones. */
+.stack-column-center {
+    text-align: center !important;
+}
+
+/* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+.center-on-narrow {
+    text-align: center !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+}
+table.center-on-narrow {
+    display: inline-block !important;
+}
+
+/* What it does: Adjust typography on small screens to improve readability */
+.email-container p {
+    font-family: loews-bold, arial, sans-serif; 
+    font-size: 17px !important; 
+    line-height: 18px;
+    padding-bottom: 12px;
+    }
+
+.listitem-link {
+    padding-bottom: 8px;
+} 
+
+span {
+    -ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; 
+font-family: loews-bold, arial, sans-serif !important; 
+font-size: 17px !important; 
+line-height: 18px !important;    
+}
+
+ol > li {
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; 
+font-family: loews-bold, arial, sans-serif !important; 
+font-size: 17px !important; 
+line-height: 18px !important;
+}
+
+ul > li {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%; 
+    font-family: loews-bold, arial, sans-serif !important; 
+    font-size: 17px !important; 
+    line-height: 18px !important;
+}
+
+.mobile-table{
+    display: block !important;
+    mso-hide:none !important;
+}
+        }
+    </style>
     <block name="template"></block>
-  </div>
 </body>
 </html>

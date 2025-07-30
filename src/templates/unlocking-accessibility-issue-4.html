@@ -1,0 +1,67 @@
+<extends src="main.html">
+    <block name="template">
+                <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+                <!-- Preview Text Spacing Hack : BEGIN -->
+                <!--<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+                    &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+                </div> -->
+                <!-- Preview Text Spacing Hack : END -->
+        
+                <!--
+                    Set the email width. Defined in two places:
+                    1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+                    2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+                    Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+                -->
+                    <!--[if mso]>
+                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+                    <tr>
+                    <td>
+                    <![endif]-->
+                <div style="max-width: 700px; margin: 0 auto;" class="email-container" width="700">    
+                    <!-- Email Body : BEGIN -->
+                        <component src="hero.html"></component>
+                        <component src="feature-image.html"
+                        image="../images/prodigy.jpg"
+                        alt="The Prodigy Team at CSUN. From Left to right: Charlotte, Dave, Anthony, Dawn, Amanda"
+                        width="728"
+                        height="318"
+                        ></component>
+                        <component src="feature-w-image-in-text-prodigy.html" 
+                            background="bg-lightblue-bg"
+                            bordercolor="#10B79C"
+                            heading="Empowering everyone: Hilton’s inward facing commitment to accessibility"
+                            image="../images/prodigy-screen.png"
+                            alt="Screen shot of Prodigy with descriptive label and high contrast buttons annotated"
+                            width="300"
+                            height="190">
+                            <component src="p-inline-test.html" background="bg-lightblue-bg">
+                                <p>Prodigy is the go-to platform for managing add-ons rates and inventory settings, currently used by 2,000 hotels and 4,000 team members. With the help and guidance of their accessibility champions, the Prodigy team has made accessibility a top priority at every stage of their development process.</p>
+                                <p>The Prodigy Component Library is fully accessible, enabling the UX team to create completely accessible user interfaces. The Storybook components used by the development team are coded with accessibility in mind. The EQAC team is trained to navigate assistive technologies like JAWS and regularly conducts accessibility audits on existing features to drive ongoing improvements. Additionally, the development and EQAC teams are trained in accessible coding practices and testing methods to ensure continuous enhancement of accessibility standards.</p>
+                                <p><strong>Zsuzasa Grexa</strong>, Sr. Software Engineer on Prodigy, emphasizes that "Working with Dave and Anthony on Prodigy brought to light often-overlooked aspects of accessibility, showing me how crucial every detail can be. From writing meaningful labels, creating accessible tables to managing focus, dynamic content and interactive components, they highlighted areas I hadn’t previously considered and helped me to deliver a more inclusive experience." </p>
+                                <p>Hilton's focus on internal accessibility sets a high standard, aligning with the Team Member Promise to create the best, most inclusive home.</p>
+                            </component>
+                            
+                        </component>
+                        <component src="section-header.html" heading="Social influencer spotlight" bordercolor="#002F61" background="bg-beige-bg" textcolor="black" align="left">
+                            <p>New this month we are launching a section to highlight how Hilton shows up in social media when it comes to accessibility and disabilities.  Thanks go out to our Influencer Marketing team for partnering on this new section.</p>
+                        </component>
+                        <component src="article-wrap-two-images-social-media.html">
+                        </component>
+                        <component src="h2-background.html" text="December’s Contest: Persona pair-up" color="lightblue-bg" textcolor="black" bordercolor="#9D4CDC" align="left"></component>
+                        <component src="article-wrap-four-images-persona-contest.html"></component>
+                        <component src="h2-background.html" text="A11y team's 2024 successes" color="beige-bg" bordercolor="#00B050" textcolor="black" align="left"></component>
+                        <component src="feature-wrap-image-a11y-wins.html"></component>
+                        <component src="h2-background.html" text="Connect with us" color="white" textcolor="black" align="left" bordercolor="#000000"></component>
+                        <component src="resources.html"></component>
+                        <component src="footer.html"></component>
+                    </table>
+                    <!-- Email Body : END -->
+                </div>
+                <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->     
+    </block>
+</extends>

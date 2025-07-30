@@ -1,0 +1,70 @@
+<extends src="main.html">
+    <block name="template">
+                <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+                <!-- Preview Text Spacing Hack : BEGIN -->
+                <!--<div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+                    &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+                </div> -->
+                <!-- Preview Text Spacing Hack : END -->
+        
+                <!--
+                    Set the email width. Defined in two places:
+                    1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+                    2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+                    Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+                -->
+                    <!--[if mso]>
+                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="680">
+                    <tr>
+                    <td>
+                    <![endif]-->
+                <div style="max-width: 700px; margin: 0 auto;" class="email-container" width="700">    
+                    <!-- Email Body : BEGIN -->
+                        <component src="hero.html"></component>
+                        <component src="feature-image.html"
+                        image="../images/bemyeyes-issue3.png"
+                        alt="Peter Tucic, a Blind and Be My Eyes user, at the front of the Wit hotel using Be My Eyes on his phone"
+                        width="728"
+                        height="294"
+                        ></component>
+                        <component src="feature.html" 
+                            background="bg-lightblue-bg"
+                            bordercolor="#10B79C"
+                            heading="Hilton leading the charge in accessible travel: Be My Eyes partnership">
+                            <component src="p.html" background="bg-lightblue-bg" text='<p>Hilton and Be My Eyes have joined forces to make hotel stays more reliable, friendly, and accessible for our guests who are blind or have low vision.</p><p>With the Be My Eyes app, guests can connect in real time to Hilton’s super-helpful customer care agents for guidance, making everything from check-in to breakfast a breeze. Our agents have been assisting guests with the TV, coffee maker, and thermostat most frequently. This partnership is rolled out across the U.S. and Canada, ensuring a warm and accessible welcome at Hilton’s portfolio of hotels.</p><p>“We believe that every guest – regardless of age, ability or any other factor – deserves a reliable and friendly travel experience and we are proud to partner with Be My Eyes to make that more of a reality for thousands of Be My Eyes users.”</p><p>- Mike Gathright, Senior Vice President, Customer Excellence and Innovation</p><p>To experience Be My Eyes in action, visit the <a href="https://www.youtube.com/watch?v=L2M7gWogzfA">Hilton YouTube channel</a> and <a href="https://www.instagram.com/p/DCPT3qMyNsV/">Matthew and Paul’s Instagram</a>. To learn more about the Be My Eyes and Hilton partnership, <a href="https://stories.hilton.com/releases/hilton-and-be-my-eyes-launch-industry-first-partnership">visit Hilton Stories</a> or our <a href="https://hilton.sharepoint.com/sites/LS_Accessibility/SitePages/Be-My-Eyes.aspx?xsdata=MDV8MDJ8fDNlMWMyNmY5MDI0NDQyZmI2MDQ3MDhkZDA4ZWY4ZWRjfDY2MDI5MmQyY2ZkNTRhM2RiN2E3ZThmN2VlNDU4YTBhfDB8MHw2Mzg2NzY1NDcxNDM0OTE2NTV8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKV0lqb2lNQzR3TGpBd01EQWlMQ0pRSWpvaVYybHVNeklpTENKQlRpSTZJazkwYUdWeUlpd2lWMVFpT2pFeGZRPT18MXxMMk5vWVhSekx6RTVPak0wTXpVMU1Ua3dZVFExTXpSalptVmlOemxrTnpGaFltSmtaR0UzTVRBeFFIUm9jbVZoWkM1Mk1pOXRaWE56WVdkbGN5OHhOek15TURVM09URXpORGcyfGIyYjAwMGE1YmJhYjRjY2E2MDQ3MDhkZDA4ZWY4ZWRjfDU1NWQzZWEyODRlMTRjNmFiYTU0MDgxZTQwZTFhMmI3&sdata=TFh5NmxRZk5RR1htQ1dSZ0Z6aXEyamlqTU9JQ3NFWHF0Y2RsdWNVOXFNTT0%3D&ovuser=660292d2-cfd5-4a3d-b7a7-e8f7ee458a0a%2CAndrea.Skeries%40Hilton.com&OR=Teams-HL&CT=1732203185762&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNDEwMjAwMTMxOCIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D">Be My Eyes SharePoint</a>.</p>'></component>
+                        </component>
+                        <component src="h2-background.html" text="Recapping Disability Employment Awareness Month celebrations" bordercolor="#002F61" color="lightblue-bg" textcolor="black" align="left"></component>
+                        <component src="feature-wrap-image-heritage-month.html">
+                        </component>
+                        <component src="h2-background.html" text="Alt text contest winner and fall-themed contest" color="lightblue-bg" textcolor="black" bordercolor="#FFA500" align="left"></component>
+                        <component src="feature-wrap-alt-text-winner.html"></component>
+                        <component src="h2-background.html" text="Accessibility Central MS Teams: Learn, engage, and stay updated!" color="beige-bg" bordercolor="#00B050" textcolor="black" align="left"></component>
+                        <component src="feature-wrap-image.html"
+                        image="../images/accessibility_central.png"
+                        alt="Accessibility Central logo with line drawing of a person in a wheelchair, a person with an hidden disability, a person using a walker and a person with a guide dog"
+                        background="bg-beige-bg"
+                        bordercolor="#00B050"
+                        width="300"
+                        height="170">
+                        <component src="p-inline-test.html" background="bg-beige-bg">
+                            <p>As part of our newsletter launch, the Accessibility team created a Microsoft Teams channel that as a centralized one-stop resource for getting your accessibility questions answered, receiving accessibility support, learning about Hilton’s accessibility efforts, participating in fun contests, and staying up to date with the latest accessible travel news.</p>
+                            <h3>Questions sub-channel</h3>
+                            <p>Use this sub-channel to post your accessibility questions.  No topic is off limits.  They can be technical about technical coding practices, requests for support on creating accessible documents or to simply get our support with training, consulting or disability inclusion efforts.</p>
+                            <h3>Unlocking Accessibility sub-channel</h3>
+                            <p>This sub-channel is an extension of this newsletter, where you’ll get the latest articles and news about accessibility at Hilton. This is where you can participate in our contests for a chance to where you can win awesome prizes!</p>
+                            <p>Join <a href="https://teams.microsoft.com/l/team/19%3ApYhRabqQHbFslbAjjZIz68Z_puPeLQddP2sDXCZrN5Q1%40thread.tacv2/conversations?groupId=24efbafd-5565-49cc-81ed-a381a71936d8&tenantId=660292d2-cfd5-4a3d-b7a7-e8f7ee458a0a">Accessibility Central in Teams</a> to learn, engage, and stay updated!</p>
+                        </component>
+                        </component>
+                        <component src="h2-background.html" text="Connect with us" color="white" textcolor="black" align="left" bordercolor="#000000"></component>
+                        <component src="resources.html"></component>
+                        <component src="footer.html"></component>
+                    </table>
+                    <!-- Email Body : END -->
+                </div>
+                <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->     
+    </block>
+</extends>
