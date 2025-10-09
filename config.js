@@ -28,4 +28,7 @@ module.exports = {
       root: "src/components/"
     }
   },
+  css: {
+    inline: true
+  }
 }

@@ -1,32 +1,32 @@
 <!-- 2 Even Columns : BEGIN -->
 <!--[if mso]>
-<table role="presentation" border="0" cellspacing="0" cellpadding="0" width="660" style="background-color: #F2F2F2">
-<tr>
-<td valign="top" width="330">
-<![endif]-->
-<div class="bg-beige-bg">
 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-<td width="6" color="{{ bordercolor }}" style="background-color:{{ bordercolor }}; width:12px"></td>
+<tr>
+<td width="50%">
+<![endif]-->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr class="{{ background }}" style="padding-bottom:12px">
+<td width="12" color="{{ bordercolor }}" style="background-color:{{ bordercolor }}; width: 12px"></td>
 <td>
-<div style="display:inline-block; min-width: 200px; max-width: 339px; vertical-align:top; padding-right:4px" class="stack-column">
+<div style="display:inline-block; min-width: 200px; max-width: 338px; vertical-align:top; padding-right:8px" class="stack-column">
     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
         <tr>
             <td class="pl-3">
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;" class="relative">
                     <tr>
                         <td class="column-image">
-                            <img src="{{ image1 }}" width="350" height="240" alt="{{ alt1 }}" class="w-full max-w-2-column max-h-2-column">
+                            <img src="{{ image1 }}" width="338" height="240" alt="{{ alt1 }}" class="w-full max-w-2-column max-h-2-column">
                         </td>
                     </tr>
                     <tr>
                         <td class="text-sm font-main py-2 leading-5">
-                            <a href="{{ headinglink1 }}"><h3 class="m-0 font-bold">{{ heading1 }}</h3></a>
+                            <h3 class="m-0 font-bold"><a href="{{ headinglink1 }}">{{ heading1 }}</a></h3>
                         </td>
                     </tr>
                     <tr>
                         <td class="text-sm font-main leading-4.5" style="padding-bottom: 8px">
                             <if condition="{{ link1 != null }}"><p style="margin: 0;" >{{{ text1 }}}<a href="{{ link1 }}" style="text-decoration:underline">{{ linkText1 }}</a></p></if>
-                            <else><p class="text-2sm font-main leading-4.5 m-0">{{{ text1 }}}</p></else>
+                            <else><p>{{{ text1 }}}</p></else>
                         </td>
                     </tr>
                 </table>
@@ -36,27 +36,27 @@
 </div>
 <!--[if mso]>
 </td>
-<td valign="top" width="330">
+<td width="50%" style="vertical-align:top">
 <![endif]-->
-<div style="display:inline-block; min-width: 200px; max-width: 339px; vertical-align:top;" class="stack-column">
+<div style="display:inline-block; min-width: 200px; max-width: 338px; vertical-align:top;" class="stack-column">
     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
         <tr>
-            <td class="px-2">
+            <td class="px-3">
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px; text-align: left;">
                     <tr>
                         <td class="column-image">
-                            <img width="350" height="240" src="{{ image2 }}" alt="{{ alt2 }}" class="w-full max-w-2-column max-h-2-column">
+                            <img width="338" height="240" src="{{ image2 }}" alt="{{ alt2 }}" class="w-full max-w-2-column max-h-2-column">
                         </td>
                     </tr>
                     <tr>
                         <td class="text-sm font-main py-2 leading-5">
-                            <a href="{{ headinglink2 }}"><h3 class="m-0 pb-2">{{ heading2 }}</h3></a>
+                            <h3 class="m-0 pb-2"><a href="{{ headinglink2 }}">{{ heading2 }}</a></h3>
                         </td>
                     </tr>
                     <tr>
                         <td class="text-sm font-main leading-5" style="padding-bottom: 8px">
                             <if condition="{{ link2 != null }}"><p style="margin: 0;" >{{{ text2 }}}<a href="{{ link2 }}" style="text-decoration:underline">{{ linkText2 }}</a></p></if>
-                            <else><p class="text-2sm font-main leading-4.5 m-0">{{{ text2 }}}</p></else>
+                            <else><p>{{{ text2 }}}</p></else>
                         </td>
                     </tr>
                 </table>
@@ -65,8 +65,8 @@
     </table>
 </div>
 </td>
+</tr>
 </table>
-</div>
 <!--[if mso]>
 </td>
 </tr>

@@ -8,6 +8,7 @@
     "@maizzle/cli": "^1.5.7",
     "@maizzle/framework": "latest",
     "better-sqlite3": "7.4.6",
+    "request": "^2.88.2",
     "tailwind": "^4.0.0",
     "tailwindcss-box-shadow": "^2.0.0",
     "tailwindcss-email-variants": "^2.0.0",

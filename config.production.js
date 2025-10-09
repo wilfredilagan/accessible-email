@@ -12,6 +12,9 @@ const fs = require('node:fs');
 var request = require('request');
 
 module.exports = {
+  css: {
+    inline: true
+  },
   events:{
     afterTransformers(html, orgConfig){
       let content = html
@@ -82,5 +85,5 @@ module.exports = {
         })()
       ]
     },
-  },
+  }
 }

@@ -8,7 +8,7 @@
       <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
       <meta name="color-scheme" content="light">
       <meta name="supported-color-schemes" content="light">
-      <title>Unlocking Accessibility: Issue 10</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+      <title>Unlocking Accessibility: Issue 13</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
   
       <!--[if (gte mso 9)|(IE)]>
         <style type="text/css">
@@ -139,7 +139,7 @@
             line-height: 18px;
           }
 
-          ol > li {
+          .ol-style {
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%; 
             font-family: loews-bold, arial, sans-serif !important; 
@@ -147,7 +147,7 @@
             line-height: 18px !important;
           }
 
-          ul > li {
+          .ul-style {
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%; 
             font-family: loews-bold, arial, sans-serif !important; 
@@ -218,13 +218,6 @@
                 height: 100%;
             }
 
-            .article-image {
-                display:block !important;
-                float:none !important;
-                margin: 0 auto 25px auto!important;
-            }
-
-
 
             /* What it does: Forces table cells into full-width rows. */
             .stack-column,
@@ -269,7 +262,7 @@
             line-height: 18px !important;    
             }
 
-            ol > li {
+            .ol-style {
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%; 
             font-family: loews-bold, arial, sans-serif !important; 
@@ -277,7 +270,7 @@
             line-height: 18px !important;
             }
 
-            ul > li {
+            .ul-style {
                 -ms-text-size-adjust: 100%;
                 -webkit-text-size-adjust: 100%; 
                 font-family: loews-bold, arial, sans-serif !important; 
@@ -295,6 +288,15 @@
             display:block;
                 float:none;
                 margin: 0 auto 25px auto;
+            }
+
+            .article-image {
+                display: block !important;
+            float: none !important;
+            margin: 0 auto 25px auto !important;
+            width: auto;
+            max-width: 100%;
+            height: auto;
             }
         }</style>
 <style>.keep-blue { 
@@ -414,6 +416,9 @@
 .max-w-2-column {
     max-width: 310px !important
 }
+.grow {
+    flex-grow: 1 !important
+}
 .border-collapse {
     border-collapse: collapse !important
 }
@@ -451,6 +456,10 @@
 .px-2 {
     padding-left: 8px !important;
     padding-right: 8px !important
+}
+.px-3 {
+    padding-left: 12px !important;
+    padding-right: 12px !important
 }
 .pl-3 {
     padding-left: 12px !important
@@ -611,15 +620,6 @@
     height: 100%;
 }
 
-
-.article-image {
-    display:block !important;
-    float:none !important;
-    margin: 0 auto 25px auto!important;
-}
-
-
-/* What it does: Forces table cells into full-width rows. */
 .stack-column,
 .stack-column-center {
     display: block !important;
@@ -728,10 +728,10 @@ ul > li {
 </table>
 <!-- 1 Column Text + Button : END -->
                         <!-- 1 Column Text + Button : BEGIN -->
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="padding-left: 12px">
     <tr class="bg-lightblue-bg" style="border: 0;">
         <td width="12" color="bordercolor" style="width: 12px; background-color: #10B79C"></td>
-        <td class="pl-3 pr-5 py-3" style="border: 0">
+        <td style="padding-left: 12px; padding-right: 20px; padding-top: 12px; padding-bottom: 12px; margin: 0; border: 0">
             <div>
                 <h2 class="m-0 font-main text-2xl">The collaborative journey behind a brand refresh</h2>
             </div>
@@ -777,7 +777,7 @@ ul > li {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-beige-bg text-black text-left">
     <tr>
     <td width="12" color="bordercolor" style="width: 12px; background-color: #002F61"></td>
-    <td class="pl-3 pr-5 py-3 m-0">
+    <td style="padding-left: 12px; padding-right: 20px; padding-top: 12px; padding-bottom: 12px; margin: 0">
         <div>
             <h2 class="m-0 font-main text-2xl">World Down Syndrome Day 2025: Lots of socks and improving support systems</h2>
         </div>
@@ -792,8 +792,8 @@ ul > li {
             <!--[if mso]>
             <table role="presentation" border="0" cellpadding="0" width="346" cellspacing="0" align="right" style="width:420px; height=170px"><tr><td style="padding:5px 5px 12px 12px;">
             <![endif]-->
-            <span>
-                <img src="../images/wdsd.jpg" alt="3 people showing the colourful and mismatching socks" align="right" width="420" height="170" class="article-image float-right ml-3 mb-3 mr-3">
+            <span class="article-image-wrap">
+                <img src="../images/wdsd.jpg" alt="3 people showing the colourful and mismatching socks" align="right" width="420" height="170" class="article-image pl-3 pb-3 pr-3">
             </span>
             <!--[if mso]>
         </td></tr></table>
@@ -816,7 +816,7 @@ ul > li {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-lightblue-bg text-black text-left">
     <tr>
     <td width="12" color="bordercolor" style="width: 12px; background-color: #9D4CDC"></td>
-    <td class="pl-3 pr-5 py-3 m-0">
+    <td style="padding-left: 12px; padding-right: 20px; padding-top: 12px; padding-bottom: 12px; margin: 0">
         <div>
             <h2 class="m-0 font-main text-2xl">February’s contest: World Down Syndrome Day</h2>
         </div>
@@ -831,8 +831,8 @@ ul > li {
             <!--[if mso]>
             <table role="presentation" border="0" cellpadding="0" width="346" cellspacing="0" align="right" style="width:300px; height=200px"><tr><td style="padding:5px 5px 12px 12px;">
             <![endif]-->
-            <span>
-                <img src="../images/WDSDsocks.jpg" alt="World Down Syndrome Day, March 21, with colourful socks" align="right" width="300" height="200" class="article-image float-right ml-3 mb-3 mr-3">
+            <span class="article-image-wrap">
+                <img src="../images/WDSDsocks.jpg" alt="World Down Syndrome Day, March 21, with colourful socks" align="right" width="300" height="200" class="article-image pl-3 pb-3 pr-3">
             </span>
             <!--[if mso]>
         </td></tr></table>
@@ -851,7 +851,7 @@ ul > li {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-lightblue-bg text-black text-left">
     <tr>
     <td width="12" color="bordercolor" style="width: 12px; background-color: #9D4CDC"></td>
-    <td class="pl-3 pr-5 py-3 m-0">
+    <td style="padding-left: 12px; padding-right: 20px; padding-top: 12px; padding-bottom: 12px; margin: 0">
         <div>
             <h2 class="m-0 font-main text-2xl">January’s contest winner: Mr. Maple Guide Dog Trivia</h2>
         </div>
@@ -866,8 +866,8 @@ ul > li {
             <!--[if mso]>
             <table role="presentation" border="0" cellpadding="0" width="346" cellspacing="0" align="right" style="width:200px; height=150px"><tr><td style="padding:5px 5px 12px 12px;">
             <![endif]-->
-            <span>
-                <img src="../images/william-winner.jpg" alt="William Naife with his daughter playing rock band" align="right" width="200" height="150" class="article-image float-right ml-3 mb-3 mr-3">
+            <span class="article-image-wrap">
+                <img src="../images/william-winner.jpg" alt="William Naife with his daughter playing rock band" align="right" width="200" height="150" class="article-image pl-3 pb-3 pr-3">
             </span>
             <!--[if mso]>
         </td></tr></table>
@@ -891,7 +891,7 @@ ul > li {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-beige-bg text-black text-left">
     <tr>
     <td width="12" color="bordercolor" style="width: 12px; background-color: #00B050"></td>
-    <td class="pl-3 pr-5 py-3 m-0">
+    <td style="padding-left: 12px; padding-right: 20px; padding-top: 12px; padding-bottom: 12px; margin: 0">
         <div>
             <h2 class="m-0 font-main text-2xl">Celebrating GAAD: Championing accessibility together</h2>
         </div>
@@ -906,8 +906,8 @@ ul > li {
             <!--[if mso]>
             <table role="presentation" border="0" cellpadding="0" width="346" cellspacing="0" align="right" style="width:200px; height=200px"><tr><td style="padding:5px 5px 12px 12px;">
             <![endif]-->
-            <span>
-                <img src="../images/GAAD.jpg" alt="GAAD Logo" align="right" width="200" height="200" class="article-image float-right ml-3 mb-3 mr-3">
+            <span class="article-image-wrap">
+                <img src="../images/GAAD.jpg" alt="GAAD Logo" align="right" width="200" height="200" class="article-image pl-3 pb-3 pr-3">
             </span>
             <!--[if mso]>
         </td></tr></table>
@@ -928,7 +928,7 @@ ul > li {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-white text-black text-left">
     <tr>
     <td width="12" color="bordercolor" style="width: 12px; background-color: #000000"></td>
-    <td class="pl-3 pr-5 py-3 m-0">
+    <td style="padding-left: 12px; padding-right: 20px; padding-top: 12px; padding-bottom: 12px; margin: 0">
         <div>
             <h2 class="m-0 font-main text-2xl">Connect with us</h2>
         </div>

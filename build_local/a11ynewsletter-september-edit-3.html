@@ -8,7 +8,7 @@
       <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no"> <!-- Tell iOS not to automatically link certain text strings. -->
       <meta name="color-scheme" content="light">
       <meta name="supported-color-schemes" content="light">
-      <title>Unlocking Accessibility: Issue 10</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+      <title>Unlocking Accessibility: Issue 13</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
   
       <!--[if (gte mso 9)|(IE)]>
         <style type="text/css">
@@ -139,7 +139,7 @@
             line-height: 18px;
           }
 
-          ol > li {
+          .ol-style {
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%; 
             font-family: loews-bold, arial, sans-serif !important; 
@@ -147,7 +147,7 @@
             line-height: 18px !important;
           }
 
-          ul > li {
+          .ul-style {
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%; 
             font-family: loews-bold, arial, sans-serif !important; 
@@ -218,13 +218,6 @@
                 height: 100%;
             }
 
-            .article-image {
-                display:block !important;
-                float:none !important;
-                margin: 0 auto 25px auto!important;
-            }
-
-
 
             /* What it does: Forces table cells into full-width rows. */
             .stack-column,
@@ -269,7 +262,7 @@
             line-height: 18px !important;    
             }
 
-            ol > li {
+            .ol-style {
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%; 
             font-family: loews-bold, arial, sans-serif !important; 
@@ -277,7 +270,7 @@
             line-height: 18px !important;
             }
 
-            ul > li {
+            .ul-style {
                 -ms-text-size-adjust: 100%;
                 -webkit-text-size-adjust: 100%; 
                 font-family: loews-bold, arial, sans-serif !important; 
@@ -295,6 +288,15 @@
             display:block;
                 float:none;
                 margin: 0 auto 25px auto;
+            }
+
+            .article-image {
+                display: block !important;
+            float: none !important;
+            margin: 0 auto 25px auto !important;
+            width: auto;
+            max-width: 100%;
+            height: auto;
             }
         }</style>
 <style>.keep-blue { 
@@ -414,6 +416,9 @@
 .max-w-2-column {
     max-width: 310px !important
 }
+.grow {
+    flex-grow: 1 !important
+}
 .border-collapse {
     border-collapse: collapse !important
 }
@@ -451,6 +456,10 @@
 .px-2 {
     padding-left: 8px !important;
     padding-right: 8px !important
+}
+.px-3 {
+    padding-left: 12px !important;
+    padding-right: 12px !important
 }
 .pl-3 {
     padding-left: 12px !important
@@ -608,15 +617,6 @@
     height: 100%;
 }
 
-
-.article-image {
-    display:block !important;
-    float:none !important;
-    margin: 0 auto 25px auto!important;
-}
-
-
-/* What it does: Forces table cells into full-width rows. */
 .stack-column,
 .stack-column-center {
     display: block !important;
@@ -714,10 +714,10 @@ ul > li {
 </table>
 <!-- Hero Image, Flush : END -->
                         <!-- 1 Column Text + Button : BEGIN -->
-<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="padding-left: 12px">
     <tr class="bg-lightblue-bg" style="border: 0;">
         <td width="12" color="bordercolor" style="width: 12px; background-color: #10B79C"></td>
-        <td class="pl-3 pr-5 py-3" style="border: 0">
+        <td style="padding-left: 12px; padding-right: 20px; padding-top: 12px; padding-bottom: 12px; margin: 0; border: 0">
             <div>
                 <h2 class="m-0 font-main text-2xl">Unlocking accessibility access</h2>
             </div>
@@ -740,7 +740,7 @@ ul > li {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-lightblue-bg text-black text-left">
     <tr>
     <td width="12" color="bordercolor" style="width: 12px; background-color: #002F61"></td>
-    <td class="pl-3 pr-5 py-3 m-0">
+    <td style="padding-left: 12px; padding-right: 20px; padding-top: 12px; padding-bottom: 12px; margin: 0">
         <div>
             <h2 class="m-0 font-main text-2xl">A victory lap for digital accessibility: Unveiling the accessible video player</h2>
         </div>
@@ -755,8 +755,8 @@ ul > li {
             <!--[if mso]>
             <table role="presentation" border="0" cellpadding="0" width="346" cellspacing="0" align="right" style="width:undefinedpx; height=undefinedpx"><tr><td style="padding:5px 5px 12px 12px;">
             <![endif]-->
-            <span>
-                <img src="../images/accessible-video-player-full.jpg" alt="The accessible video player toolbar on the Graduate homepage" align="right" width="undefined" height="undefined" class="article-image float-right ml-3 mb-3 mr-3">
+            <span class="article-image-wrap">
+                <img src="../images/accessible-video-player-full.jpg" alt="The accessible video player toolbar on the Graduate homepage" align="right" width="undefined" height="undefined" class="article-image pl-3 pb-3 pr-3">
             </span>
             <!--[if mso]>
         </td></tr></table>
@@ -772,7 +772,7 @@ ul > li {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-beige-bg text-black text-left">
     <tr>
     <td width="12" color="bordercolor" style="width: 12px; background-color: #FF3399"></td>
-    <td class="pl-3 pr-5 py-3 m-0">
+    <td style="padding-left: 12px; padding-right: 20px; padding-top: 12px; padding-bottom: 12px; margin: 0">
         <div>
             <h2 class="m-0 font-main text-2xl">Contest time: Show us the power of alt text (and win a prize)!</h2>
         </div>
@@ -787,8 +787,8 @@ ul > li {
             <!--[if mso]>
             <table role="presentation" border="0" cellpadding="0" width="346" cellspacing="0" align="right" style="width:undefinedpx; height=undefinedpx"><tr><td style="padding:5px 5px 12px 12px;">
             <![endif]-->
-            <span>
-                <img src="../images/alt-text-contest.png" alt="Paris Hilton’s Stay Like an Infinite Icon suite has dazzling chic pink lighting and stylish accents! The living room boasts luxurious column architecture, creating a glamorous vibe. Kick back on the plush seating around the cozy round coffee table and enjoy your favorite shows in ultimate comfort." align="right" width="undefined" height="undefined" class="article-image float-right ml-3 mb-3 mr-3">
+            <span class="article-image-wrap">
+                <img src="../images/alt-text-contest.png" alt="Paris Hilton’s Stay Like an Infinite Icon suite has dazzling chic pink lighting and stylish accents! The living room boasts luxurious column architecture, creating a glamorous vibe. Kick back on the plush seating around the cozy round coffee table and enjoy your favorite shows in ultimate comfort." align="right" width="undefined" height="undefined" class="article-image pl-3 pb-3 pr-3">
             </span>
             <!--[if mso]>
         </td></tr></table>
@@ -805,7 +805,7 @@ ul > li {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-beige-bg text-black text-left">
     <tr>
     <td width="12" color="bordercolor" style="width: 12px; background-color: #00B050"></td>
-    <td class="pl-3 pr-5 py-3 m-0">
+    <td style="padding-left: 12px; padding-right: 20px; padding-top: 12px; padding-bottom: 12px; margin: 0">
         <div>
             <h2 class="m-0 font-main text-2xl">Hilton and the Paralympics</h2>
         </div>
@@ -865,7 +865,7 @@ ul > li {
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="bg-white text-black text-left">
     <tr>
     <td width="12" color="bordercolor" style="width: 12px; background-color: #000000"></td>
-    <td class="pl-3 pr-5 py-3 m-0">
+    <td style="padding-left: 12px; padding-right: 20px; padding-top: 12px; padding-bottom: 12px; margin: 0">
         <div>
             <h2 class="m-0 font-main text-2xl">Connect with us</h2>
         </div>
